@@ -28,13 +28,13 @@
 }
 
 @keyframes expandMenu {
-    from { transform: translateX(0); }
-    to { transform: translateX(108%); }
+    from { transform: translateX(-108%); }
+    to { transform: translateX(0); }
 }
 
 @keyframes condenseMenu {
-    from { transform: translateX(108%); }
-    to { transform: translateX(0); }
+    from { transform: translateX(0); }
+    to { transform: translateX(-108%); }
 }
 
 .navMenu {
@@ -73,7 +73,7 @@
     width: 100%;
     min-width: 10em;
     list-style-type: none;
-    padding: 1em 0;
+    padding: .9em 0;
     text-align: left;
 }
 

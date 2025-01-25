@@ -323,7 +323,7 @@ li {
   position: absolute;
   left: 0em !important;
   right: 0em !important;
-  z-index: 10 !important;
+  z-index: 5;
 }
 
 .dialog-title {

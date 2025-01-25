@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/mylife-organizer-app/static/css/main.dcca9f21.css",
-    "main.js": "/mylife-organizer-app/static/js/main.857886bb.js",
+    "main.css": "/mylife-organizer-app/static/css/main.2ffa251e.css",
+    "main.js": "/mylife-organizer-app/static/js/main.93fb9834.js",
     "static/js/453.f24e5791.chunk.js": "/mylife-organizer-app/static/js/453.f24e5791.chunk.js",
     "index.html": "/mylife-organizer-app/index.html",
     "static/media/calendar.svg": "/mylife-organizer-app/static/media/calendar.8c9f1573945a90dd87c562429c3e3592.svg",
@@ -21,12 +21,12 @@
     "static/media/chevron-down.svg": "/mylife-organizer-app/static/media/chevron-down.3c697b0cf65b7a54cec7199556682c4e.svg",
     "static/media/delete-item-dash-circle.svg": "/mylife-organizer-app/static/media/delete-item-dash-circle.cd4227419d9b765671331d4146acaa71.svg",
     "static/media/chevron-up.svg": "/mylife-organizer-app/static/media/chevron-up.b0f2e05e8837f1ff1dcfa9096880f475.svg",
-    "main.dcca9f21.css.map": "/mylife-organizer-app/static/css/main.dcca9f21.css.map",
-    "main.857886bb.js.map": "/mylife-organizer-app/static/js/main.857886bb.js.map",
+    "main.2ffa251e.css.map": "/mylife-organizer-app/static/css/main.2ffa251e.css.map",
+    "main.93fb9834.js.map": "/mylife-organizer-app/static/js/main.93fb9834.js.map",
     "453.f24e5791.chunk.js.map": "/mylife-organizer-app/static/js/453.f24e5791.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dcca9f21.css",
-    "static/js/main.857886bb.js"
+    "static/css/main.2ffa251e.css",
+    "static/js/main.93fb9834.js"
   ]
 }

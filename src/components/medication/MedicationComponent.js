@@ -82,6 +82,7 @@ const MedicationComponent = ({ medications, dispatch, isOpen }) => {
                             ) : (
                                 <MedicationAccordionCardReadOnly
                                     medication={medication}
+                                    dispatch={dispatch}
                                     handleEditItemClick={handleEditItemClick}
                                     handleDeleteItemClick={handleDeleteItemClick}
                                 />

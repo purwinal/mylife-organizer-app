@@ -53,6 +53,7 @@ li {
 
 .app-container {
   display: flex;
+  flex-direction: column;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -152,6 +153,7 @@ li {
 .accordion-card-readOnly-btns {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 3em;
 }
 
@@ -389,4 +391,12 @@ li {
   color: rgb(206, 25, 25);
   width: 1.5em;
   height: 1.5em;
+}
+
+.delete-accordion-icons {
+  color: rgb(206, 25, 25);
+  width: 2.3em;
+  height: 2.3em;
+  margin-left: 1em;
+  margin-top: .4em;
 }

@@ -90,7 +90,7 @@ const MedicationContentReadOnly = ({
                             <p>{dose.currentTime}</p>
                             <p>{dose.amount}mg</p>
                             <div className="dialog-delete-btn-container">
-                                <DialogRoot size="lg" placement="top"  isOpen={isDialogOpen} onClose={handleClose}>
+                                <DialogRoot size="lg" placement="top" isOpen={isDialogOpen} onClose={handleClose}>
                                     <DialogTrigger asChild>
                                         <Button className="dialog-trigger-btn" variant="none" size="sm" onClick={handleDeleteClick}>
                                             <DeleteIcon

@@ -115,17 +115,20 @@ function App() {
 // Converts viewport height to account for browsers
 	useEffect(() => {
 		const setViewportHeight = () => {
-			const vh = window.innerHeight * 0.01;
-			document.documentElement.style.setProperty('--vh', `${vh}px`);
+			document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
 		};
+
 		setViewportHeight();
 
 		window.addEventListener('resize', setViewportHeight);
-		return () => window.removeEventListener('resize', setViewportHeight);
+
+		return () => {
+			window.removeEventListener('resize', setViewportHeight);
+		};
 	}, []);
 
   	return (
-    	<div className="app-container">
+    	<div className="app-container" style={{ height: 'calc(var(--vh, 1vh) * 100)' }}>
 			<MainNav
 				setIsOpen={setIsOpen}
 			/>

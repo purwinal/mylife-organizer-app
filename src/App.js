@@ -10,6 +10,7 @@ import MedicationComponent from './components/medication/MedicationComponent.js'
 import WorkoutsComponent from './components/workouts/WorkoutsComponent.js';
 import CaloriesComponent from './components/calories/CaloriesComponent.js';
 import JournalComponent from './components/journal/JournalComponent.js';
+import Settings from './components/settings/Settings.js';
 import TrashComponent from './components/trash/TrashComponent.js';
 import MainNav from './components/app/MainNav.js';
 import medicationsReducer from './reducers/medicationsReducer.js';
@@ -98,6 +99,15 @@ function App() {
 	useEffect(() => {
 		localStorage.setItem('Trash', JSON.stringify(trash))
 	}, [trash])
+
+// Settings State
+	const [ settings, setSettings ] = useState(() => {
+		return JSON.parse(localStorage.getItem('Settings')) || []
+	});
+
+	useEffect(() => {
+		localStorage.setItem('Settings', JSON.stringify(settings))
+	}, [settings])
 
 	const [ isOpen, setIsOpen ] = useState({
 		home: true,
@@ -211,6 +221,14 @@ function App() {
 							isOpen={isOpen}
 							journals={journals}
 							setJournals={setJournals}
+						/>}
+					/>
+					<Route
+						path="settings"
+						element={<Settings
+							isOpen={isOpen}
+							settings={settings}
+							setSettings={setSettings}
 						/>}
 					/>
 					<Route

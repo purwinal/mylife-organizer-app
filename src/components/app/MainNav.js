@@ -10,6 +10,7 @@ import { ReactComponent as FinancesIcon } from '../../assets/finances.svg';
 import { ReactComponent as MedicationIcon } from '../../assets/medication.svg';
 import { ReactComponent as CaloriesIcon } from '../../assets/calories.svg';
 import { ReactComponent as WorkoutIcon } from '../../assets/workout.svg';
+import { ReactComponent as SettingsIcon } from '../../assets/settings.svg';
 import { ReactComponent as TrashIcon } from '../../assets/trash.svg';
 import { ReactComponent as MenuIcon } from '../../assets/menu.svg';
 import { ReactComponent as CloseMenuIcon } from '../../assets/menu-close.svg';
@@ -129,6 +130,12 @@ const MainNav = ({ setIsOpen }) => {
                         <NavLink className={styles.navItem} to="/journal" onClick={() => toggleComponent("journal")}>
                             <JournalIcon className={styles.navItemIcon} alt="Journal icon" />
                             <span className={`${styles.navItemName} ${styles.hoverUnderline}`}>Journal</span>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink className={styles.navItem} to="/settings" onClick={() => toggleComponent("trash")}>
+                            <SettingsIcon className={styles.navItemIcon} alt="Settings icon" />
+                            <span className={`${styles.navItemName} ${styles.hoverUnderline}`}>Settings</span>
                         </NavLink>
                     </li>
                     <li>

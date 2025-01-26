@@ -126,7 +126,6 @@ const MedicationContentReadOnly = ({
                 <form className="accordion-one-btn-form" onSubmit={handleAddDosage}>
                     <input
                         type="text"
-                        inputmode="numeric"
                         name="dosage"
                         className="accordion-one-btn-form-input"
                         placeholder="Enter mg"

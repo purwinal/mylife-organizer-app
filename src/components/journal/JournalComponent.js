@@ -1,16 +1,21 @@
 import { useState, useReducer, useEffect } from 'react';
 import styles from './JournalComponent.module.css';
 import Header from '../app/Header.js';
+import PageNav from '../app/PageNav.js';
 import { ReactComponent as Logo } from '../../assets/journal.svg';
 
 const JournalComponent = ({ journals, setJournals, isOpen }) => {
     return (
-        <div className={`page-container ${isOpen.journal ? "open" : "closed"}`}>
+        <section className={`${styles.container} ${isOpen.journal ? styles.open : styles.closed}`}>
             <Header
-                logo={<Logo className="header-logo" alt="Journal logo" />}
+                logo={<Logo className={styles.logo} alt="Journal logo" />}
                 title="Journal"
             />
-        </div>
+            <div className={styles.body}>
+
+            </div>
+            <PageNav/>
+        </section>
     )
 }
 

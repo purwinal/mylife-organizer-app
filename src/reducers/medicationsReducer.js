@@ -7,6 +7,7 @@ const medicationsReducer = (medications, action) => {
                 ...medications,
                 {
                     id: Date.now(),
+                    category: 'Medication',
                     value: medications.length,
                     title: action.title,
                     dosage: [],
@@ -37,6 +38,7 @@ const medicationsReducer = (medications, action) => {
                               ...medication.dosage,
                               {
                                   id: new Date().getTime(),
+                                  category: 'Medication Dosage',
                                   amount: action.dosage,
                                   time: new Date().toISOString(),
                                   currentTime: formattedTime,

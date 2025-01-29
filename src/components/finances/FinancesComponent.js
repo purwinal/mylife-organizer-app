@@ -1,6 +1,7 @@
 import { useState, useReducer, useEffect } from 'react';
 import styles from './FinancesComponent.module.css';
 import Header from '../app/Header.js';
+import PageNav from '../app/PageNav.js';
 import { ReactComponent as Logo } from '../../assets/finances.svg';
 
 const FinancesComponent = ({ expenses, setExpenses, isOpen }) => {
@@ -14,12 +15,16 @@ const FinancesComponent = ({ expenses, setExpenses, isOpen }) => {
 		}, [isChecked])
 
 	return (
-		<div className={`page-container ${isOpen.finances ? "open" : "closed"}`}>
+		<section className={`${styles.container} ${isOpen.finances ? styles.open : styles.closed}`}>
 			<Header
-				logo={<Logo className="header-logo" alt="Finances logo" />}
+				logo={<Logo className={styles.logo} alt="Finances logo" />}
 				title="Finances"
 			/>
-		</div>
+           <div className={styles.body}>
+
+			</div>
+			<PageNav/>
+		</section>
 	)
 }
 

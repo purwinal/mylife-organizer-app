@@ -69,12 +69,12 @@ const MainNav = ({ setIsOpen }) => {
             <nav className={`${styles.navMenu} ${isMenuOpen ? styles.open : styles.closed}`} ref={menuRef}>
                 <div className={styles.logoContainer}>
                     <div className={styles.logoSection}>
-                        <span className={styles.logoText}>
+                        <div className={styles.logoText}>
                             <Link to="/" onClick={() => toggleComponent("home")}>
                                 <h2>MyLife</h2>
                                 <h3>Organizer</h3>
                             </Link>
-                        </span>
+                        </div>
                     </div>
                 </div>
                 <ul className={`${styles.navMenuUl}`}>

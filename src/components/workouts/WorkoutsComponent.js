@@ -1,6 +1,7 @@
 import { useState, useReducer, useEffect } from 'react';
 import styles from './WorkoutsComponent.module.css';
 import Header from '../app/Header.js';
+import PageNav from '../app/PageNav.js';
 import { ReactComponent as Logo } from '../../assets/workout.svg';
 
 const WorkoutsComponent = ({ workouts, setWorkouts, isOpen }) => {
@@ -22,12 +23,16 @@ const WorkoutsComponent = ({ workouts, setWorkouts, isOpen }) => {
 	}, [exerciseAccordionItems])
 
     return (
-        <div className={`page-container ${isOpen.workouts ? "open" : "closed"}`}>
+        <section className={`${styles.container} ${isOpen.workouts ? styles.open : styles.closed}`}>
             <Header
-                logo={<Logo className="header-logo" alt="Workout logo" />}
+                logo={<Logo className={styles.logo} alt="Workout logo" />}
                 title="Workouts"
             />
-        </div>
+			<div className={styles.body}>
+
+			</div>
+			<PageNav/>
+        </section>
     )
 }
 

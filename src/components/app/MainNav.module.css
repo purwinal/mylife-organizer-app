@@ -44,6 +44,7 @@
     bottom: 0;
     z-index: 3;
     width: 100vw;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -53,7 +54,6 @@
     padding: 0;
     margin: 0;
     box-shadow: 20px 0 5px -2px #00000044;
-    overflow: auto;
 }
 
 .navMenu.open {
@@ -65,8 +65,11 @@
 }
 
 .navMenuUl {
-    padding-left: 2em;
-    margin: 0;
+    padding: 0 2em;
+    margin: 1em 0 0 0;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .navMenuUl li {
@@ -103,8 +106,7 @@
     margin: 0;
     position: sticky;
     top: 0;
-    z-index: 2;
-    border-bottom: 1px solid #141414;
+    z-index: 3;
 }
 
 .logoSection {
@@ -117,6 +119,7 @@
     width: 100%;
     padding: .5em 1em .5em 5.6em;
     margin: 0;
+    line-height: 1.8rem;
 }
 
 .logoText {
@@ -128,14 +131,13 @@
     font-size: 2rem;
     font-weight: bold;
     color: #FFF;
-    margin: 0;
-    margin-top: -7px;
+    margin: .3em 0 0 0;
+    padding: 0;
 }
 
 .logoText h3 {
     font-size: 1.3rem;
     font-weight: bold;
-    line-height: 1.2rem;
     color: #333;
     margin: 0;
     margin-bottom: 7px;

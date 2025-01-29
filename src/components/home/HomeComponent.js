@@ -1,5 +1,6 @@
 import styles from './HomeComponent.module.css';
 import Header from '../app/Header.js';
+import PageNav from '../app/PageNav.js';
 import { ReactComponent as Logo } from '../../assets/home.svg';
 import RecentSection from './RecentSection.js';
 
@@ -17,12 +18,12 @@ const HomeComponent = ({
 }) => {
 
     return (
-        <div className={`page-container ${isOpen.home ? "open" : "closed"}`}>
+        <section className={`${styles.container} ${isOpen.home ? styles.open : styles.closed}`}>
             <Header
-                logo={<Logo className="header-logo" alt="Home logo" />}
+                logo={<Logo className={styles.logo} alt="Home logo" />}
                 title="Overview"
             />
-            <div>
+            <div className={styles.body}>
                 <RecentSection
                     heading="To-Do Lists"
                     array={toDoLists}
@@ -68,7 +69,8 @@ const HomeComponent = ({
                     array={trash}
                 />
             </div>
-        </div>
+            <PageNav/>
+        </section>
     )
 }
 

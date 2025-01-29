@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './PageNav.module.css';
-import { ReactComponent as UpArrow } from '../../assets/chevron-up.svg';
-import { ReactComponent as DownArrow } from '../../assets/chevron-down.svg';
+import { ReactComponent as UpArrow } from '../../assets/chevron-wide-up.svg';
+import { ReactComponent as DownArrow } from '../../assets/chevron-wide-down.svg';
 
 const PageNav = () => {
     const [ isPageNavOpen, setIsPageNavOpen ] = useState(false);

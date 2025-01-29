@@ -1,0 +1,101 @@
+.container {
+    padding: 1em 2em 2em;
+    overflow: auto;
+    line-height: 3.5rem;
+    background-color: #000;
+    border-radius: 0;
+}
+
+.gridItemsContainer {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.gridItemsBody {
+    height: max-content;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.gridHeadings3Col,
+.gridItems3Col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    text-align: center;
+    align-items: center;
+    border-bottom: 1px solid #EEE;
+}
+
+.gridHeadings3Col {
+    font-weight: bold;
+    color: #fff;
+}
+
+.deleteBtn {
+    padding-top: 1.3em;
+}
+
+.dateRow {
+    border-bottom: 1px solid #EEE;
+    background-color: #94dcd9;
+    color: #333;
+    line-height: 2rem;
+}
+
+.dateRowText {
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 2em;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em 0 0 0;
+    border-top: 1px solid #EEE;
+}
+
+.formInput {
+    grid-column: 1/2;
+    border: 3px solid transparent;
+    outline: none;
+    width: 100%;
+    height: 50px;
+    padding: .1em 1em;
+    border-radius: 50px;
+    background-color: #EEE;
+    color: #333;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.formInput:focus {
+    border: 3px solid #20B2AA;
+}
+
+.formBtns {
+    grid-column: 2/3;
+    padding: .5em 1em;
+    height: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    border: 1px solid #20B2AA;
+    background-color: #20B2AA;
+    border-radius: 50px;
+}
+
+.formBtns:active {
+    color: #333;
+    background-color: #146A6A;
+    border-color: #146A6A;
+}
+
+.formBtns.disabled {
+    background-color: #ccc;
+    border: 1px solid #ccc;
+}

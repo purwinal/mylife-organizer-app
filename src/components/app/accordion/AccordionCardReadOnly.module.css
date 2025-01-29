@@ -1,0 +1,47 @@
+.container {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 1.5em;
+    align-items: center;
+    line-height: 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #EEE;
+    padding: .3em 1em;
+}
+
+.title {
+    border: none;
+    outline: none;
+    color: #EEE;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.btns {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 4em;
+    gap: .8em;
+}
+
+.btnIcons {
+    width: 1em;
+    height: 1em;
+    color: #20B2AA;
+}
+
+.btnIcons:active {
+    color: #146A6A;
+}
+
+.btnIcons.delete {
+    color: rgb(206, 25, 25);
+    width: 2.3em;
+    height: 2.3em;
+    margin-left: 1em;
+    margin-top: .4em;
+}

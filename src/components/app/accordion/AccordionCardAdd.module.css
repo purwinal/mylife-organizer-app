@@ -1,0 +1,88 @@
+.item {
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.titleContainer {
+    border-bottom: 5px solid #000;
+    background-color: #3c3c3c;
+    padding: .5em 0;
+    box-shadow: 0px 10px 25px 0px #333;
+    width: 100%;
+    border-radius: 0;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1em;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1em;
+}
+
+.formInput.addItem {
+    grid-column: span 2;
+    border: 3px solid transparent;
+    outline: none;
+    width: 100%;
+    padding: .03em 1em;
+    border-radius: 50px;
+    background-color: #EEE;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+.formInput.addItem:focus {
+    border: 3px solid #20B2AA;
+}
+
+.formBtns.addItem {
+    padding: .28em 1em;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 1px solid #20B2AA;
+    background-color: #20B2AA;
+    border-radius: 50px;
+}
+
+.formBtns.addItem:active {
+    color: #333;
+    background-color: #146A6A;
+    border-color: #146A6A;
+}
+
+.formBtns.left {
+    grid-column: 1/2;
+}
+
+.formBtns.right {
+    grid-column: 2/3;
+}
+
+.addBtnContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+}
+
+.addBtnLabel {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #EEE;
+}
+
+.addBtn {
+    color: #EEE;
+}
+
+.addBtn:hover {
+    color: #146A6A;
+}
+
+.addBtn:active {
+    color: #333;
+}

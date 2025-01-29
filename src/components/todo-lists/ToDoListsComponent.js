@@ -1,28 +1,11 @@
 import { useState, useReducer, useEffect } from 'react';
 import styles from './ToDoListsComponent.module.css';
+import taskReducer from '../../reducers/taskReducer.js';
 import Header from '../app/Header.js';
+import PageNav from '../app/PageNav.js';
 import { ReactComponent as Logo } from '../../assets/todo-list.svg';
 import ToDoCard from './ToDoCard';
 import { ReactComponent as DeleteIcon } from '../../assets/delete-item-dash-circle.svg';
-
-const taskReducer = (toDoTasks, action) => {
-    switch (action.type) {
-        case 'ADD_TASK':
-            return [...toDoTasks, {
-                id: Date.now(),
-                text: action.toDoText,
-                completed: false }
-            ];
-        case 'TOGGLE_TASK':
-            return toDoTasks.map(toDoTask =>
-                toDoTask.id === action.id ? { ...toDoTask, completed: !toDoTask.completed } : toDoTask
-            );
-        case 'DELETE_TASK':
-            return toDoTasks.filter(toDoTask => toDoTask.id !== action.id);
-        default:
-            return toDoTasks;
-    }
-}
 
 const ToDoListsComponent = ({ toDoLists, setToDoLists, isOpen }) => {
 // States
@@ -78,12 +61,12 @@ const ToDoListsComponent = ({ toDoLists, setToDoLists, isOpen }) => {
     }
 
     return (
-        <div className={`page-container ${isOpen.toDoLists ? "open" : "closed"}`}>
+        <section className={`${styles.container} ${isOpen.toDoLists ? styles.open : styles.closed}`}>
             <Header
-                logo={<Logo className="header-logo" alt="To-do lists logo" />}
+                logo={<Logo className={styles.logo} alt="To-do lists logo" />}
                 title="To-Do Lists"
             />
-            <section className="sidebar-page-layout">
+            <div className={styles.body}>
                 <div className="page-sidebar">
                     <button className="add-item-sidebar-btn" type="button">New List</button>
                     <div className="page-sidebar-item-list">
@@ -100,7 +83,7 @@ const ToDoListsComponent = ({ toDoLists, setToDoLists, isOpen }) => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </div>
 
 
             <article className={styles.mainContainer}>
@@ -141,7 +124,8 @@ const ToDoListsComponent = ({ toDoLists, setToDoLists, isOpen }) => {
                 />
                 <button className={`button ${styles.addItemBtn}`} onClick={handleAddTask}>Add a Task</button>
             </article>
-        </div>
+            <PageNav/>
+        </section>
     )
 }
 

@@ -1,16 +1,21 @@
 import { useState, useReducer, useEffect } from 'react';
 import styles from './CaloriesComponent.module.css';
 import Header from '../app/Header.js';
+import PageNav from '../app/PageNav.js';
 import { ReactComponent as Logo } from '../../assets/calories.svg';
 
 const CaloriesComponent = ({ calories, setCalories, isOpen }) => {
     return (
-        <div className={`page-container ${isOpen.calories ? "open" : "closed"}`}>
+        <section className={`${styles.container} ${isOpen.calories ? styles.open : styles.closed}`}>
             <Header
-                logo={<Logo className="header-logo" alt="Calories logo" />}
+                logo={<Logo className={styles.logo} alt="Calories logo" />}
                 title="Calories"
             />
-        </div>
+            <div className={styles.body}>
+
+            </div>
+            <PageNav/>
+        </section>
     )
 }
 

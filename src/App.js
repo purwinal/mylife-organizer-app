@@ -91,15 +91,6 @@ function App() {
 		localStorage.setItem('Journals', JSON.stringify(journals))
 	}, [journals])
 
-// Trash State
-	const [ trash, setTrash ] = useState(() => {
-		return JSON.parse(localStorage.getItem('Trash')) || []
-	});
-
-	useEffect(() => {
-		localStorage.setItem('Trash', JSON.stringify(trash))
-	}, [trash])
-
 // Settings State
 	const [ settings, setSettings ] = useState(() => {
 		return JSON.parse(localStorage.getItem('Settings')) || []
@@ -108,6 +99,15 @@ function App() {
 	useEffect(() => {
 		localStorage.setItem('Settings', JSON.stringify(settings))
 	}, [settings])
+
+// Trash State
+	const [ trash, setTrash ] = useState(() => {
+		return JSON.parse(localStorage.getItem('Trash')) || []
+	});
+
+	useEffect(() => {
+		localStorage.setItem('Trash', JSON.stringify(trash))
+	}, [trash])
 
 	const [ isOpen, setIsOpen ] = useState({
 		home: true,
@@ -119,6 +119,7 @@ function App() {
 		workouts: false,
 		calories: false,
 		journal: false,
+		settings: false,
 		trash: false
 	});
 

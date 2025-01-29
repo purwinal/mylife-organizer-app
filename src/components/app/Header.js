@@ -4,7 +4,7 @@ const Header = (props) => {
     return (
         <header className={styles.header}>
             <div>
-                {props.logo}
+                <span className={styles.logo}>{props.logo}</span>
                 <h1>{props.title}</h1>
             </div>
         </header>

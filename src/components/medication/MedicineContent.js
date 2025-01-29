@@ -70,7 +70,7 @@ const MedicineContent = ({
                                 <p>
                                     <button className={styles.deleteBtn} onClick={() => handleDeleteClick(item.id, dose.id)}>
                                         <DeleteIcon
-                                            className="delete-icons"
+                                            className={styles.deleteBtnIcon}
                                             alt="Delete item icon"
                                         />
                                     </button>

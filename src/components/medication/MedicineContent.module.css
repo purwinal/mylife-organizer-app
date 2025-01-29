@@ -32,8 +32,17 @@
     color: #fff;
 }
 
-.deleteBtn {
-    padding-top: 1.3em;
+h3 {
+    font-size: 1.2rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+.deleteBtnIcon {
+    width: 1em;
+    height: 1em;
 }
 
 .dateRow {

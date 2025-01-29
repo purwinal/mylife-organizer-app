@@ -36,30 +36,19 @@ h1 {
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 h3 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 li {
   list-style-type: none;
-}
-
-.app-container {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: auto;
-  height: 100vh;
-  width: 100vw;
 }
 
 /* Dialog Popup */
@@ -105,20 +94,4 @@ li {
 .dialog-delete-cancel-btn:active {
   background-color: #146A6A;
   color: #333;
-}
-
-/* ICONS */
-
-.delete-icons {
-  color: rgb(206, 25, 25);
-  width: 1.5em;
-  height: 1.5em;
-}
-
-.delete-accordion-icons {
-  color: rgb(206, 25, 25);
-  width: 2.3em;
-  height: 2.3em;
-  margin-left: 1em;
-  margin-top: .4em;
 }

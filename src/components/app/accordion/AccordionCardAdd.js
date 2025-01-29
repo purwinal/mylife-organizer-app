@@ -27,12 +27,12 @@ const AccordionCardAdd = ({
         <article>
             {isAddingItem ? (
                 <div className={styles.item}>
-                    <h2>
+                    <h2 className={styles.h2}>
                         <div className={styles.titleContainer}>
                             <div>
                                 <form className={styles.form} onSubmit={handleFormSubmit}>
                                     <input
-                                        className={`${styles.formInput} ${styles.addItem}`}
+                                        className={`${styles.formInput}`}
                                         type="text"
                                         name="title"
                                         placeholder="Enter name..."
@@ -40,13 +40,13 @@ const AccordionCardAdd = ({
                                         onChange={handleFormChange}
                                     />
                                     <button
-                                        className={`${styles.formBtns} ${styles.left} ${styles.addItem}`}
+                                        className={`${styles.formBtns} ${styles.left}`}
                                         type="submit"
                                     >
                                         Add
                                     </button>
                                     <button
-                                        className={`${styles.formBtns} ${styles.right} ${styles.addItem}`}
+                                        className={`${styles.formBtns} ${styles.right}`}
                                         type="button"
                                         onClick={() => setIsAddingItem(false)}
                                     >
@@ -62,7 +62,7 @@ const AccordionCardAdd = ({
                     <button
                         onClick={() => setIsAddingItem(true)}
                     >
-                        <div>
+                        <div className={styles.addBtnWrapper}>
                             <p className={styles.addBtnLabel}>Add New</p>
                             <AddIcon className={styles.addBtn} />
                         </div>

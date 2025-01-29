@@ -2,11 +2,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 1em;
+    gap: 1.5em;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 1em;
+    padding: 2em 1.3em;
 }
 
 .formInput {
@@ -18,7 +18,7 @@
     border-radius: 50px;
     background-color: #EEE;
     color: #333;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
 .formInput:focus {
@@ -26,7 +26,7 @@
 }
 
 .formBtns {
-    padding: .5em 1em;
+    padding: .3em 1em;
     font-size: 1.5rem;
     font-weight: bold;
     border: 1px solid #20B2AA;

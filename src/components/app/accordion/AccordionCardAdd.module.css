@@ -7,10 +7,13 @@
 .titleContainer {
     border-bottom: 5px solid #000;
     background-color: #3c3c3c;
-    padding: .5em 0;
-    box-shadow: 0px 10px 25px 0px #333;
+    padding: .3em 0;
     width: 100%;
     border-radius: 0;
+}
+
+.h2 {
+    padding: 0;
 }
 
 .form {
@@ -24,24 +27,24 @@
     padding: 1em;
 }
 
-.formInput.addItem {
+.formInput {
     grid-column: span 2;
     border: 3px solid transparent;
     outline: none;
     width: 100%;
-    padding: .03em 1em;
+    padding: .2em 1em;
     border-radius: 50px;
     background-color: #EEE;
     color: #333;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
-.formInput.addItem:focus {
+.formInput:focus {
     border: 3px solid #20B2AA;
 }
 
-.formBtns.addItem {
-    padding: .28em 1em;
+.formBtns {
+    padding: .3em 1em;
     font-size: 1.5rem;
     font-weight: bold;
     border: 1px solid #20B2AA;
@@ -49,7 +52,7 @@
     border-radius: 50px;
 }
 
-.formBtns.addItem:active {
+.formBtns:active {
     color: #333;
     background-color: #146A6A;
     border-color: #146A6A;
@@ -69,6 +72,12 @@
     margin-top: 3em;
 }
 
+.addBtnWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .addBtnLabel {
     font-size: 1.8rem;
     font-weight: bold;
@@ -77,6 +86,10 @@
 
 .addBtn {
     color: #EEE;
+    width: 3em;
+    height: 3em;
+    margin: 1em;
+    color: #20B2AA;
 }
 
 .addBtn:hover {

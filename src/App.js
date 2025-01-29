@@ -139,11 +139,11 @@ function App() {
 	}, []);
 
   	return (
-    	<div className="app-container" style={{ height: 'calc(var(--vh, 1vh) * 100)' }}>
+    	<div className={styles.container} style={{ height: 'calc(var(--vh, 1vh) * 100)' }}>
 			<MainNav
 				setIsOpen={setIsOpen}
 			/>
-			<main className={`main`}>
+			<main className={styles.main}>
 				<Routes>
 					<Route
 						path="/"

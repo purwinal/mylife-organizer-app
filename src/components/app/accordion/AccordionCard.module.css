@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     margin-top: 1em;
-    height: auto;
+    height: max-content;
 }
 
 .container {
@@ -26,12 +26,12 @@
 }
 
 .item:last-child .title {
-    border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 10px ;
     border-bottom-right-radius: 10px;
 }
 
 .title {
-    border-bottom: 5px solid #000;
+    border-bottom: 2px solid #333;
     background-color: #3c3c3c;
     padding: 0;
     width: 100%;

@@ -32,29 +32,24 @@
     color: #fff;
 }
 
-h3 {
-    font-size: 1.2rem;
-}
-
-p {
-    font-size: 1rem;
-}
-
 .deleteBtnIcon {
     width: 1em;
     height: 1em;
+    color: #20B2AA;
 }
 
 .dateRow {
     border-bottom: 1px solid #EEE;
-    background-color: #94dcd9;
+    background-color: #20B2AA;
     color: #333;
     line-height: 2rem;
 }
 
 .dateRowText {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-style: italic;
+    font-weight: bold;
+    padding: 0 1em;
 }
 
 .form {

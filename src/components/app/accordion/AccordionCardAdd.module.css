@@ -1,3 +1,10 @@
+.container {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
 .item {
     border: none;
     display: flex;
@@ -8,8 +15,10 @@
     border-bottom: 5px solid #000;
     background-color: #3c3c3c;
     padding: .3em 0;
+    margin: 0;
     width: 100%;
-    border-radius: 0;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
 }
 
 .h2 {

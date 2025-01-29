@@ -24,7 +24,7 @@ const AccordionCardAdd = ({
     };
 
     return (
-        <article>
+        <article className={styles.container}>
             {isAddingItem ? (
                 <div className={styles.item}>
                     <h2 className={styles.h2}>

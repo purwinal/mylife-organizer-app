@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './MedicationComponent.module.css';
+import headerStyles from '../app/Header.module.css';
 import Header from '../app/Header.js';
 import AccordionCard from '../app/accordion/AccordionCard.js';
 import PageNav from '../app/PageNav.js';
@@ -13,7 +14,7 @@ const MedicationComponent = ({ medications, dispatch, isOpen }) => {
     return (
         <section className={`${styles.container} ${isOpen.medications ? styles.open : styles.closed}`}>
             <Header
-                logo={<Logo className={styles.logo} alt="Medication logo" />}
+                logo={<Logo className={headerStyles.logo} alt="Medication logo" />}
                 title="Medication"
             />
             <div className={styles.body}>

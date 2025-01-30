@@ -1,5 +1,6 @@
 import { useState, useReducer, useEffect } from 'react';
 import styles from './ToDoListsComponent.module.css';
+import headerStyles from '../app/Header.module.css';
 import taskReducer from '../../reducers/taskReducer.js';
 import Header from '../app/Header.js';
 import PageNav from '../app/PageNav.js';
@@ -63,7 +64,7 @@ const ToDoListsComponent = ({ toDoLists, setToDoLists, isOpen }) => {
     return (
         <section className={`${styles.container} ${isOpen.toDoLists ? styles.open : styles.closed}`}>
             <Header
-                logo={<Logo className={styles.logo} alt="To-do lists logo" />}
+                logo={<Logo className={headerStyles.logo} alt="To-do lists logo" />}
                 title="To-Do Lists"
             />
             <div className={styles.body}>

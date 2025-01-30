@@ -14,11 +14,11 @@
     border: 3px solid transparent;
     outline: none;
     width: 100%;
-    padding: .2em 1em;
+    padding: 0 1em;
     border-radius: 50px;
     background-color: #EEE;
     color: #333;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 .formInput:focus {
@@ -26,9 +26,8 @@
 }
 
 .formBtns {
-    padding: .3em 1em;
-    font-size: 1.5rem;
-    font-weight: bold;
+    padding: .22em 1em;
+    font-size: 1.125rem;
     border: 1px solid #20B2AA;
     background-color: #20B2AA;
     border-radius: 50px;

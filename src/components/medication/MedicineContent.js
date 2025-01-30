@@ -47,9 +47,9 @@ const MedicineContent = ({
     return (
         <div className={styles.container}>
             <div className={styles.gridHeadings3Col}>
-                <h3>TIME</h3>
-                <h3>AMOUNT</h3>
-                <h3>DELETE</h3>
+                <h3>Time</h3>
+                <h3>Amount</h3>
+                <h3>Delete</h3>
             </div>
             <div className={styles.gridItemsContainer}>
                 {item.dosage.map((dose) => {

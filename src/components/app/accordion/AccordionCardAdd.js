@@ -5,10 +5,16 @@ import { ReactComponent as AddIcon } from '../../../assets/add-item.svg';
 const AccordionCardAdd = ({
     dispatch,
     addItemInput,
-    setAddItemInput
+    setAddItemInput,
+    isAddingItem,
+    setIsAddingItem
 }) => {
-    const [ isAddingItem, setIsAddingItem ] = useState(false);
+
     const clearFormInput = useRef("");
+
+    const handleAddItemClick = () => {
+        setIsAddingItem(true);
+    };
 
     const handleFormChange = (e) => {
         setAddItemInput({
@@ -60,7 +66,7 @@ const AccordionCardAdd = ({
             ) : (
                 <div className={styles.addBtnContainer}>
                     <button
-                        onClick={() => setIsAddingItem(true)}
+                        onClick={handleAddItemClick}
                     >
                         <div className={styles.addBtnWrapper}>
                             <p className={styles.addBtnLabel}>Add New</p>

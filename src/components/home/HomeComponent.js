@@ -1,4 +1,5 @@
 import styles from './HomeComponent.module.css';
+import headerStyles from '../app/Header.module.css';
 import Header from '../app/Header.js';
 import PageNav from '../app/PageNav.js';
 import { ReactComponent as Logo } from '../../assets/home.svg';
@@ -20,7 +21,7 @@ const HomeComponent = ({
     return (
         <section className={`${styles.container} ${isOpen.home ? styles.open : styles.closed}`}>
             <Header
-                logo={<Logo className={styles.logo} alt="Home logo" />}
+                logo={<Logo className={headerStyles.logo} alt="Home logo" />}
                 title="Overview"
             />
             <div className={styles.body}>

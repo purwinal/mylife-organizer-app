@@ -31,15 +31,10 @@
     animation: pageSlideRight 0.2s forwards;
 }
 
-.logo {
-    width: 3em;
-    height: 3em;
-    margin-right: 1em;
-}
-
 .body {
     height: calc(100vh - 60px);
     overflow-y: auto;
     overflow-x: hidden;
+    margin: 1em;
     padding: 1em;
 }

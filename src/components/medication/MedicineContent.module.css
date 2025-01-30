@@ -24,12 +24,17 @@
     grid-template-rows: 1fr;
     text-align: center;
     align-items: center;
-    border-bottom: 1px solid #EEE;
 }
 
 .gridHeadings3Col {
     font-weight: bold;
-    color: #fff;
+    color: #EEE;
+    border-bottom: none;
+}
+
+.gridItems3Col {
+    border-bottom: 1px solid #333;
+    color: #EEE;
 }
 
 .deleteBtnIcon {
@@ -39,10 +44,10 @@
 }
 
 .dateRow {
-    border-bottom: 1px solid #EEE;
     background-color: #20B2AA;
     color: #333;
     line-height: 2rem;
+    border-radius: 10px;
 }
 
 .dateRowText {
@@ -68,12 +73,12 @@
     border: 3px solid transparent;
     outline: none;
     width: 100%;
-    height: 50px;
-    padding: .1em 1em;
+    padding: 0 1em;
     border-radius: 50px;
     background-color: #EEE;
     color: #333;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 1.9rem;
     text-align: center;
 }
 
@@ -83,11 +88,9 @@
 
 .formBtns {
     grid-column: 2/3;
-    padding: .5em 1em;
-    height: 50px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    line-height: 1.5rem;
+    padding: .22em 1em;
+    font-size: 1.125rem;
+    line-height: 1.7rem;
     border: 1px solid #20B2AA;
     background-color: #20B2AA;
     border-radius: 50px;

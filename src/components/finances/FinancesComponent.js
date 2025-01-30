@@ -1,5 +1,6 @@
 import { useState, useReducer, useEffect } from 'react';
 import styles from './FinancesComponent.module.css';
+import headerStyles from '../app/Header.module.css';
 import Header from '../app/Header.js';
 import PageNav from '../app/PageNav.js';
 import { ReactComponent as Logo } from '../../assets/finances.svg';
@@ -17,7 +18,7 @@ const FinancesComponent = ({ expenses, setExpenses, isOpen }) => {
 	return (
 		<section className={`${styles.container} ${isOpen.finances ? styles.open : styles.closed}`}>
 			<Header
-				logo={<Logo className={styles.logo} alt="Finances logo" />}
+				logo={<Logo className={headerStyles.logo} alt="Finances logo" />}
 				title="Finances"
 			/>
            <div className={styles.body}>

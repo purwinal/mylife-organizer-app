@@ -2,11 +2,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 1.5em;
+    gap: 1em;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 2em 1.3em;
+    padding: 1.5em 2em;
 }
 
 .formInput {
@@ -26,7 +26,7 @@
 }
 
 .formBtns {
-    padding: .22em 1em;
+    padding: .1em 1em;
     font-size: 1.125rem;
     border: 1px solid #20B2AA;
     background-color: #20B2AA;
@@ -45,4 +45,17 @@
 
 .formBtns.right {
     grid-column: 2/3;
+}
+
+.btnIcons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnIcons {
+    width: 1.7em;
+    height: 1.7em;
+    color: #EEE;
+    width: 100%;
 }

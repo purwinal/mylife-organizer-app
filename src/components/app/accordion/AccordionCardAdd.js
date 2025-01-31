@@ -1,20 +1,20 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import styles from './AccordionCardAdd.module.css';
-import { ReactComponent as AddIcon } from '../../../assets/add-item.svg';
+import { ReactComponent as UpArrow } from '../../../assets/chevron-wide-up.svg';
+import { ReactComponent as Check } from '../../../assets/check.svg';
+import { ReactComponent as Cancel } from '../../../assets/x.svg';
+
 
 const AccordionCardAdd = ({
     dispatch,
     addItemInput,
     setAddItemInput,
     isAddingItem,
-    setIsAddingItem
+    setIsAddingItem,
+    isArrayEmpty
 }) => {
 
     const clearFormInput = useRef("");
-
-    const handleAddItemClick = () => {
-        setIsAddingItem(true);
-    };
 
     const handleFormChange = (e) => {
         setAddItemInput({
@@ -29,52 +29,70 @@ const AccordionCardAdd = ({
         setIsAddingItem(false);
     };
 
+    if (!isAddingItem && isArrayEmpty) {
+        return (
+            <div className={styles.textContainer}>
+                <h2 className={styles.textHeading}>You haven't added any items yet.</h2>
+                <div className={styles.subTextContainer}>
+                    <p className={styles.text}>To get started:</p>
+                    <div className={styles.indentedTextContainer}>
+                        <p className={styles.inlineText}>
+                            1. Click on the "<UpArrow class={styles.inlineIcon} />" icon at the bottom of the screen.
+                        </p>
+                        <p className={styles.inlineText}>
+                            2. Then, click on "<span className={styles.coloredText}>Add Item</span>".
+                        </p>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+    if (!isAddingItem) {
+        return null;
+    }
+
     return (
         <article className={styles.container}>
-            {isAddingItem ? (
-                <div className={styles.item}>
-                    <h2 className={styles.h2}>
-                        <div className={styles.titleContainer}>
-                            <div>
-                                <form className={styles.form} onSubmit={handleFormSubmit}>
-                                    <input
-                                        className={`${styles.formInput}`}
-                                        type="text"
-                                        name="title"
-                                        placeholder="Enter name..."
-                                        ref={clearFormInput}
-                                        onChange={handleFormChange}
+            <div className={styles.item}>
+                <h2 className={styles.h2}>
+                    <div className={`${styles.titleContainer} ${isArrayEmpty ? styles.fullBorderRadius : styles.bottomBorderRadius}`}>
+                        <form className={styles.form} onSubmit={handleFormSubmit}>
+                            <input
+                                className={`${styles.formInput}`}
+                                type="text"
+                                name="title"
+                                placeholder="Enter name..."
+                                ref={clearFormInput}
+                                onChange={handleFormChange}
+                            />
+                            <button
+                                className={`${styles.formBtns} ${styles.left}`}
+                                type="submit"
+                            >
+                                <div className={styles.btns}>
+                                    <Check
+                                        className={styles.btnIcons}
+                                        alt="Check icon"
                                     />
-                                    <button
-                                        className={`${styles.formBtns} ${styles.left}`}
-                                        type="submit"
-                                    >
-                                        Add
-                                    </button>
-                                    <button
-                                        className={`${styles.formBtns} ${styles.right}`}
-                                        type="button"
-                                        onClick={() => setIsAddingItem(false)}
-                                    >
-                                        Cancel
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </h2>
-                </div>
-            ) : (
-                <div className={styles.addBtnContainer}>
-                    <button
-                        onClick={handleAddItemClick}
-                    >
-                        <div className={styles.addBtnWrapper}>
-                            <p className={styles.addBtnLabel}>Add New</p>
-                            <AddIcon className={styles.addBtn} />
-                        </div>
-                    </button>
-                </div>
-            )}
+                                </div>
+                            </button>
+                            <button
+                                className={`${styles.formBtns} ${styles.right}`}
+                                type="button"
+                                onClick={() => setIsAddingItem(false)}
+                            >
+                                <div className={styles.btns}>
+                                    <Cancel
+                                        className={styles.btnIcons}
+                                        alt="Cancel icon"
+                                    />
+                                </div>
+                            </button>
+                        </form>
+                    </div>
+                </h2>
+            </div>
         </article>
     )
 }

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from './MedicineContent.module.css';
 import { ReactComponent as DeleteIcon } from '../../assets/delete-item-dash-circle.svg';
+import { ReactComponent as Check } from '../../assets/check.svg';
 
 const MedicineContent = ({
     item,
@@ -93,11 +94,21 @@ const MedicineContent = ({
                     />
                     {dosage <= 0 || dosage === '' ? (
                         <button type="button" className={`${styles.formBtns} ${styles.disabled}`}>
-                            Add
+                            <div className={styles.btns}>
+                                <Check
+                                    className={styles.btnIcons}
+                                    alt="Check icon"
+                                />
+                            </div>
                         </button>
                     ) : (
                         <button type="submit" className={styles.formBtns}>
-                            Add
+                            <div className={styles.btns}>
+                                <Check
+                                    className={styles.btnIcons}
+                                    alt="Check icon"
+                                />
+                            </div>
                         </button>
                     )}
                 </form>

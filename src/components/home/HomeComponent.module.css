@@ -1,6 +1,6 @@
 .container {
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     overflow: hidden;
     position: absolute;
     top: 0;
@@ -24,11 +24,11 @@
 }
 
 .container.open {
-    animation: pageSlideLeft 0.2s forwards;
+    animation: pageSlideLeft 0.3s forwards;
 }
 
 .container.closed {
-    animation: pageSlideRight 0.2s forwards;
+    animation: pageSlideRight 0.3s forwards;
 }
 
 .body {
@@ -36,5 +36,5 @@
     overflow-y: auto;
     overflow-x: hidden;
     margin: 1em;
-    padding: 1em;
+    padding: 1em 2em;
 }

@@ -1,11 +1,14 @@
 import styles from './AccordionCardEditable.module.css';
+import { ReactComponent as Check } from '../../../assets/check.svg';
+import { ReactComponent as Cancel } from '../../../assets/x.svg';
 
 const AccordionCardEditable = ({
     dispatch,
     editItemInput,
     setEditItemInput,
     editItemId,
-    setEditItemId
+    setEditItemId,
+    isArrayEmpty
 }) => {
 
     const handleOnClick = (e) => {
@@ -32,7 +35,7 @@ const AccordionCardEditable = ({
     };
 
     return (
-        <div>
+        <div className={styles.container}>
             <form className={styles.form} onSubmit={handleFormSubmit}>
                 <input
                     className={styles.formInput}
@@ -48,14 +51,24 @@ const AccordionCardEditable = ({
                     type="submit"
                     onClick={handleOnClick}
                 >
-                    Save
+                    <div className={styles.btns}>
+                        <Check
+                            className={styles.btnIcons}
+                            alt="Check icon"
+                        />
+                    </div>
                 </button>
                 <button
                     className={`${styles.formBtns} ${styles.right}`}
                     type="button"
                     onClick={(e) => handleCancelClick(e)}
                 >
-                    Cancel
+                    <div className={styles.btns}>
+                        <Cancel
+                            className={styles.btnIcons}
+                            alt="Cancel icon"
+                        />
+                    </div>
                 </button>
             </form>
         </div>

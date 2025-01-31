@@ -2,7 +2,7 @@ import { useState, useReducer, useEffect } from 'react';
 import styles from './NotesComponent.module.css';
 import headerStyles from '../app/Header.module.css';
 import Header from '../app/Header.js';
-import PageNav from '../app/PageNav.js';
+import PageMenu from '../app/pageMenu/PageMenu.js';
 import { ReactComponent as Logo } from '../../assets/notes.svg';
 
 const NotesComponent = ({ notes, setNotes, isOpen }) => {
@@ -13,9 +13,9 @@ const NotesComponent = ({ notes, setNotes, isOpen }) => {
                 title="Notes"
             />
             <div className={styles.body}>
-
+            
             </div>
-            <PageNav/>
+            <PageMenu />
         </section>
     )
 }

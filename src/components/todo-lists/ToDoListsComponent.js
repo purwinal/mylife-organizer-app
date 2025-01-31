@@ -3,7 +3,7 @@ import styles from './ToDoListsComponent.module.css';
 import headerStyles from '../app/Header.module.css';
 import taskReducer from '../../reducers/taskReducer.js';
 import Header from '../app/Header.js';
-import PageNav from '../app/PageNav.js';
+import PageMenu from '../app/pageMenu/PageMenu.js';
 import { ReactComponent as Logo } from '../../assets/todo-list.svg';
 import ToDoCard from './ToDoCard';
 import { ReactComponent as DeleteIcon } from '../../assets/delete-item-dash-circle.svg';
@@ -125,7 +125,7 @@ const ToDoListsComponent = ({ toDoLists, setToDoLists, isOpen }) => {
                 />
                 <button className={`button ${styles.addItemBtn}`} onClick={handleAddTask}>Add a Task</button>
             </article>
-            <PageNav/>
+            <PageMenu />
         </section>
     )
 }

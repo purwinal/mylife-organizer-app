@@ -2,7 +2,7 @@ import { useState, useReducer, useEffect } from 'react';
 import styles from './Settings.module.css';
 import headerStyles from '../app/Header.module.css';
 import Header from '../app/Header.js';
-import PageNav from '../app/PageNav.js';
+import PageMenu from '../app/pageMenu/PageMenu.js';
 import { ReactComponent as Logo } from '../../assets/settings.svg';
 
 const Settings = ({ settings, setSetSettings, isOpen }) => {
@@ -15,7 +15,7 @@ const Settings = ({ settings, setSetSettings, isOpen }) => {
             <div className={styles.body}>
 
             </div>
-            <PageNav/>
+            <PageMenu />
         </section>
     );
 }

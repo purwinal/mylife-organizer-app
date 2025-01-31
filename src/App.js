@@ -1,6 +1,7 @@
 import { useState, useReducer, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import styles from './App.module.css';
+import headerStyles from './components/app/Header.module.css';
 import HomeComponent from './components/home/HomeComponent.js';
 import ToDoListsComponent from './components/todo-lists/ToDoListsComponent.js';
 import NotesComponent from './components/notes/NotesComponent.js';
@@ -12,9 +13,13 @@ import CaloriesComponent from './components/calories/CaloriesComponent.js';
 import JournalComponent from './components/journal/JournalComponent.js';
 import Settings from './components/settings/Settings.js';
 import TrashComponent from './components/trash/TrashComponent.js';
-import MainNav from './components/app/MainNav.js';
+import MainNav from './components/app/mainNavigation/MainNav.js';
 import medicationsReducer from './reducers/medicationsReducer.js';
 import { initialState } from './reducers/medicationsReducer.js';
+import Header from './components/app/Header.js';
+import RecentSection from './components/home/RecentSection.js';
+import PageMenu from './components/app/pageMenu/PageMenu.js';
+import { ReactComponent as Logo } from './assets/home.svg';
 
 function App() {
 
@@ -123,26 +128,62 @@ function App() {
 		trash: false
 	});
 
-// Converts viewport height to account for browsers
-	useEffect(() => {
-		const setViewportHeight = () => {
-			document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-		};
-
-		setViewportHeight();
-
-		window.addEventListener('resize', setViewportHeight);
-
-		return () => {
-			window.removeEventListener('resize', setViewportHeight);
-		};
-	}, []);
-
   	return (
-    	<div className={styles.container} style={{ height: 'calc(var(--vh, 1vh) * 100)' }}>
+    	<div className={styles.container}>
 			<MainNav
 				setIsOpen={setIsOpen}
 			/>
+			<Header
+                logo={<Logo className={headerStyles.logo} alt="Home logo" />}
+                title="Overview"
+            />
+			<div className={styles.body}>
+                <RecentSection
+                    heading="To-Do Lists"
+                    array={toDoLists}
+                />
+                <hr />
+                <RecentSection
+                    heading="Notes"
+                    array={notes}
+                />
+                <hr />
+                <RecentSection
+                    heading="Upcoming Events"
+                    array={events}
+                />
+                <hr />
+                <RecentSection
+                    heading="Finances"
+                    array={expenses}
+                />
+                <hr />
+                <RecentSection
+                    heading="Medications"
+                    array={medications}
+                />
+                <hr />
+                <RecentSection
+                    heading="Workouts"
+                    array={workouts}
+                />
+                <hr />
+                <RecentSection
+                    heading="Calories"
+                    array={calories}
+                />
+                <hr />
+                <RecentSection
+                    heading="Journals"
+                    array={journals}
+                />
+                <hr />
+                <RecentSection
+                    heading="Recently Deleted"
+                    array={trash}
+                />
+            </div>
+            <PageMenu />
 			<main className={styles.main}>
 				<Routes>
 					<Route

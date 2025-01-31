@@ -88,7 +88,7 @@
 
 .formBtns {
     grid-column: 2/3;
-    padding: .22em 1em;
+    padding: .1em 1em;
     font-size: 1.125rem;
     line-height: 1.7rem;
     border: 1px solid #20B2AA;
@@ -105,4 +105,17 @@
 .formBtns.disabled {
     background-color: #ccc;
     border: 1px solid #ccc;
+}
+
+.btnIcons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnIcons {
+    width: 1.7em;
+    height: 1.7em;
+    color: #EEE;
+    width: 100%;
 }

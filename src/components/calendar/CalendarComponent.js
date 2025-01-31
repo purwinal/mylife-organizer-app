@@ -2,7 +2,7 @@ import { useState, useReducer, useEffect } from 'react';
 import styles from './CalendarComponent.module.css';
 import headerStyles from '../app/Header.module.css';
 import Header from '../app/Header.js';
-import PageNav from '../app/PageNav.js';
+import PageMenu from '../app/pageMenu/PageMenu.js';
 import { ReactComponent as Logo } from '../../assets/calendar.svg';
 
 const CalendarComponent = ({ events, setEvents, isOpen }) => {
@@ -15,7 +15,7 @@ const CalendarComponent = ({ events, setEvents, isOpen }) => {
             <div className={styles.body}>
 
             </div>
-            <PageNav/>
+            <PageMenu />
         </section>
     )
 }

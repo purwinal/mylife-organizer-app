@@ -3,10 +3,12 @@ import styles from './MedicationComponent.module.css';
 import headerStyles from '../app/Header.module.css';
 import Header from '../app/Header.js';
 import AccordionCard from '../app/accordion/AccordionCard.js';
-import PageNav from '../app/PageNav.js';
+import PageMenu from '../app/pageMenu/PageMenu.js';
 import { ReactComponent as Logo } from '../../assets/medication.svg';
 
 const MedicationComponent = ({ medications, dispatch, isOpen }) => {
+
+    const [ isAddingItem, setIsAddingItem ] = useState(false);
     const [ editItemId, setEditItemId ] = useState(null);
     const [ editItemInput, setEditItemInput ] = useState({ title: '', dosage: '' });
     const [ addItemInput, setAddItemInput ] = useState({ title: '', dosage: '' });
@@ -21,6 +23,8 @@ const MedicationComponent = ({ medications, dispatch, isOpen }) => {
                 <AccordionCard
                     array={medications}
                     dispatch={dispatch}
+                    isAddingItem={isAddingItem}
+                    setIsAddingItem={setIsAddingItem}
                     addItemInput={addItemInput}
                     setAddItemInput={setAddItemInput}
                     editItemInput={editItemInput}
@@ -30,7 +34,10 @@ const MedicationComponent = ({ medications, dispatch, isOpen }) => {
                     contentTitle="Medicine"
                 />
             </div>
-            <PageNav/>
+            <PageMenu
+                isAddingItem={isAddingItem}
+                setIsAddingItem={setIsAddingItem}
+            />
         </section>
     )
 }

@@ -1,0 +1,122 @@
+/* Navigation Button */
+
+.menuBtn {
+    position: absolute;
+    z-index: 10;
+    background-color: transparent;
+    color: #FFF;
+    padding: 0;
+    margin: 1.6em 1.4em;
+    border: none;
+}
+
+.openMenuIcon {
+    width: 3rem;
+    height: 3rem;
+    margin: .54em .4em;
+    color: #FFF;
+    padding: 0;
+}
+
+.closeMenuIcon {
+    width: 2.3rem;
+    height: 2.3rem;
+    margin: .88em .84em;
+    color: #FFF;
+    padding: 0;
+}
+
+/* Logo Section */
+
+.logoContainer {
+    display: flex;
+    background-color: #141414;
+    width: 100%;
+    padding: 1em 1em 1em 0;
+    margin: 0;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+.logoSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #20B2AA;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 100%;
+    padding: 1em 1em 1em 6.7em;
+    margin: 0;
+    line-height: 1.8rem;
+}
+
+.logoText {
+    border-left: 4px solid #FFF;
+    padding-left: 1.5em;
+}
+
+.logoText h2 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #FFF;
+    margin: 0;
+    padding: 0;
+}
+
+.logoText h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    margin-top: -7px;
+}
+
+/* Menu */
+
+@keyframes expandMenu {
+    from { transform: translateX(-108%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes condenseMenu {
+    from { transform: translateX(0); }
+    to { transform: translateX(-108%); }
+}
+
+.navMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    background-color: #141414;
+    color: #FFF;
+    padding: 0;
+    margin: 0;
+    box-shadow: 20px 0 5px -2px #00000044;
+}
+
+.navMenu.open {
+    animation: expandMenu 0.3s forwards;
+}
+
+.navMenu.closed {
+    animation: condenseMenu 0.3s forwards;
+}
+
+.navMenuUl {
+    padding: 0 1em;
+    margin: 1em 0 0 0;
+    height: 100dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+}

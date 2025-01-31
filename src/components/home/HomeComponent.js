@@ -1,7 +1,7 @@
 import styles from './HomeComponent.module.css';
 import headerStyles from '../app/Header.module.css';
 import Header from '../app/Header.js';
-import PageNav from '../app/PageNav.js';
+import PageMenu from '../app/pageMenu/PageMenu.js';
 import { ReactComponent as Logo } from '../../assets/home.svg';
 import RecentSection from './RecentSection.js';
 
@@ -70,7 +70,7 @@ const HomeComponent = ({
                     array={trash}
                 />
             </div>
-            <PageNav/>
+            <PageMenu />
         </section>
     )
 }

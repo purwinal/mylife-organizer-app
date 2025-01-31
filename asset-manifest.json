@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/mylife-organizer-app/static/css/main.72309e67.css",
-    "main.js": "/mylife-organizer-app/static/js/main.c9823a50.js",
+    "main.css": "/mylife-organizer-app/static/css/main.ef3d9573.css",
+    "main.js": "/mylife-organizer-app/static/js/main.f5975ab8.js",
     "static/js/453.f24e5791.chunk.js": "/mylife-organizer-app/static/js/453.f24e5791.chunk.js",
     "static/media/settings.svg": "/mylife-organizer-app/static/media/settings.e40e5c953fcb6a2f9c6393ee546e5840.svg",
     "index.html": "/mylife-organizer-app/index.html",
@@ -18,18 +18,21 @@
     "static/media/notes.svg": "/mylife-organizer-app/static/media/notes.1bbe94f976c20054d5233843dd395718.svg",
     "static/media/add-item.svg": "/mylife-organizer-app/static/media/add-item.00dfc175e19e950219119836768e9dec.svg",
     "static/media/menu.svg": "/mylife-organizer-app/static/media/menu.1320df01975afb9d39dd1adebbeaf324.svg",
+    "static/media/x.svg": "/mylife-organizer-app/static/media/x.8a96217de6ece9399335a88273932ef7.svg",
     "static/media/menu-close.svg": "/mylife-organizer-app/static/media/menu-close.ed3061de2e07bc29707e45c5aebcb4fe.svg",
     "static/media/chevron-wide-down.svg": "/mylife-organizer-app/static/media/chevron-wide-down.3c697b0cf65b7a54cec7199556682c4e.svg",
+    "static/media/chevron-right.svg": "/mylife-organizer-app/static/media/chevron-right.597fe3d8ed529406dc9c3e43721773e3.svg",
     "static/media/chevron-down.svg": "/mylife-organizer-app/static/media/chevron-down.93bf7702727ad7b0e26fbfc08b882346.svg",
     "static/media/delete-item-dash-circle.svg": "/mylife-organizer-app/static/media/delete-item-dash-circle.cd4227419d9b765671331d4146acaa71.svg",
     "static/media/chevron-wide-up.svg": "/mylife-organizer-app/static/media/chevron-wide-up.b0f2e05e8837f1ff1dcfa9096880f475.svg",
+    "static/media/check.svg": "/mylife-organizer-app/static/media/check.17ed16633b9ca577fae9510da59b4876.svg",
     "static/media/chevron-up.svg": "/mylife-organizer-app/static/media/chevron-up.67524a9bd44c683cbea7f0843b33368b.svg",
-    "main.72309e67.css.map": "/mylife-organizer-app/static/css/main.72309e67.css.map",
-    "main.c9823a50.js.map": "/mylife-organizer-app/static/js/main.c9823a50.js.map",
+    "main.ef3d9573.css.map": "/mylife-organizer-app/static/css/main.ef3d9573.css.map",
+    "main.f5975ab8.js.map": "/mylife-organizer-app/static/js/main.f5975ab8.js.map",
     "453.f24e5791.chunk.js.map": "/mylife-organizer-app/static/js/453.f24e5791.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.72309e67.css",
-    "static/js/main.c9823a50.js"
+    "static/css/main.ef3d9573.css",
+    "static/js/main.f5975ab8.js"
   ]
 }

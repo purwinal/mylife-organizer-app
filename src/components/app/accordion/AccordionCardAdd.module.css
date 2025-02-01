@@ -3,12 +3,7 @@
     height: auto;
     margin: 0;
     padding: 0;
-}
-
-.item {
-    border: none;
-    display: flex;
-    flex-direction: column;
+    background-color: #1c1c1e;
 }
 
 .fullBorderRadius {
@@ -20,29 +15,15 @@
     border-bottom-right-radius: 10px;
 }
 
-.titleContainer {
-    border-bottom: 5px solid #000;
-    background-color: #3c3c3c;
-    padding: .2em .6em;
-    margin: 0;
-    width: 100%;
-    border-bottom-left-radius: 14px;
-    border-bottom-right-radius: 14px;
-}
-
-.h2 {
-    padding: 0;
-}
-
 .form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: .8em;
+    gap: 1.5em;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 1em;
+    padding: 1.5em 2em;
 }
 
 .formInput {
@@ -52,14 +33,16 @@
     width: 100%;
     padding: 0 1em;
     border-radius: 50px;
-    background-color: #EEE;
-    color: #333;
+    background-color: #fefefc;
+    color: #000;
     font-size: 1.25rem;
 }
 
 .formInput:focus {
     border: 3px solid #20B2AA;
 }
+
+/* Buttons */
 
 .formBtns {
     padding: .1em 1em;
@@ -70,7 +53,6 @@
 }
 
 .formBtns:active {
-    color: #333;
     background-color: #146A6A;
     border-color: #146A6A;
 }
@@ -83,17 +65,17 @@
     grid-column: 2/3;
 }
 
-.btnIcons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/* Button Icons */
 
 .btnIcons {
     width: 1.7em;
     height: 1.7em;
-    color: #EEE;
+    color: #fefefc;
     width: 100%;
+}
+
+.btnIcons:active {
+    color: #1c1c1e;
 }
 
 /* Empty Message */
@@ -102,13 +84,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
-    text-align: left;
-    width: 100%;
-    height: 100%;
-    padding: 1em;
+    justify-content: center;
+    width: 100vw;
+    height: fit-content;
     text-wrap: wrap;
-    margin-top: 1em;
+    margin: 3em 0;
 }
 
 .textHeading {
@@ -122,10 +102,11 @@
     flex-direction: column;
     align-items: start;
     justify-content: start;
-    text-align: left;
-    width: 100%;
+    width: 60%;
     height: 100%;
-    padding: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em 0;
     text-wrap: wrap;
 }
 
@@ -138,6 +119,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    color: #4f4e51;
 }
 
 .inlineContainer {

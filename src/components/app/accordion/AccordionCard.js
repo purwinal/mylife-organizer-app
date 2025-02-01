@@ -48,7 +48,6 @@ const AccordionCard = ({
                                     setEditItemInput={setEditItemInput}
                                     editItemId={editItemId}
                                     setEditItemId={setEditItemId}
-                                    isArrayEmpty={array.length === 0}
                                 />
                             ) : (
                                 <AccordionCardReadOnly

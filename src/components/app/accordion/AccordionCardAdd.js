@@ -53,47 +53,37 @@ const AccordionCardAdd = ({
     }
 
     return (
-        <article className={styles.container}>
-            <div className={styles.item}>
-                <h2 className={styles.h2}>
-                    <div className={`${styles.titleContainer} ${isArrayEmpty ? styles.fullBorderRadius : styles.bottomBorderRadius}`}>
-                        <form className={styles.form} onSubmit={handleFormSubmit}>
-                            <input
-                                className={`${styles.formInput}`}
-                                type="text"
-                                name="title"
-                                placeholder="Enter name..."
-                                ref={clearFormInput}
-                                onChange={handleFormChange}
-                            />
-                            <button
-                                className={`${styles.formBtns} ${styles.left}`}
-                                type="submit"
-                            >
-                                <div className={styles.btns}>
-                                    <Check
-                                        className={styles.btnIcons}
-                                        alt="Check icon"
-                                    />
-                                </div>
-                            </button>
-                            <button
-                                className={`${styles.formBtns} ${styles.right}`}
-                                type="button"
-                                onClick={() => setIsAddingItem(false)}
-                            >
-                                <div className={styles.btns}>
-                                    <Cancel
-                                        className={styles.btnIcons}
-                                        alt="Cancel icon"
-                                    />
-                                </div>
-                            </button>
-                        </form>
-                    </div>
-                </h2>
-            </div>
-        </article>
+        <div className={`${styles.container} ${isArrayEmpty ? styles.fullBorderRadius : styles.bottomBorderRadius}`}>
+            <form className={styles.form} onSubmit={handleFormSubmit}>
+                <input
+                    className={`${styles.formInput}`}
+                    type="text"
+                    name="title"
+                    placeholder="Enter name..."
+                    ref={clearFormInput}
+                    onChange={handleFormChange}
+                />
+                <button
+                    className={`${styles.formBtns} ${styles.left}`}
+                    type="submit"
+                >
+                    <Check
+                        className={styles.btnIcons}
+                        alt="Check icon"
+                    />
+                </button>
+                <button
+                    className={`${styles.formBtns} ${styles.right}`}
+                    type="button"
+                    onClick={() => setIsAddingItem(false)}
+                >
+                    <Cancel
+                        className={styles.btnIcons}
+                        alt="Cancel icon"
+                    />
+                </button>
+            </form>
+        </div>
     )
 }
 

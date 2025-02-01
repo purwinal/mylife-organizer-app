@@ -8,8 +8,12 @@ const RecentSection = (props) => {
                 <div className={styles.bodyInner}>
                     {props.array.map((item) => (
                         <article className={styles.item} key={item.id}>
-                            <img src={item.snapshot} alt={item.alt} style={{ width: "100px", height: "100px", border: "1px solid #ccc" }} />
-                            <h3>{item.title}</h3>
+                            <div className={styles.imgContainer}>
+                                <img src={item.snapshot} alt={item.alt} className={styles.img} />
+                            </div>
+                            <div className={styles.titleContainer}>
+                                <h3>{item.title}</h3>
+                            </div>
                         </article>
                     ))}
                 </div>

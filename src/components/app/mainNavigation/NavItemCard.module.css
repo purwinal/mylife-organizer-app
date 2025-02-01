@@ -3,6 +3,7 @@
     list-style-type: none;
     padding: .5em 0 .5em .4em;
     text-align: left;
+    background-color: #1c1c1e;
 }
 
 .navItem {
@@ -15,8 +16,8 @@
 }
 
 .navItemIcon {
-    width: 2.3rem;
-    height: 2rem;
+    width: 2.1rem;
+    height: 1.8rem;
     border: 1px solid #20B2AA;
     border-radius: 7px;
     padding: .2em;
@@ -31,6 +32,13 @@
     font-size: 1.25rem;
     text-decoration: none;
 }
+
+.navItemArrow {
+    color: #5a595e;
+    font-weight: bold;
+}
+
+/* Text Effects */
 
 .hoverUnderline:hover {
     color: #20B2AA;

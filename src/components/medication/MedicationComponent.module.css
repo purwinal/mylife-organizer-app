@@ -10,7 +10,7 @@
     z-index: 2;
     align-items: center;
     justify-content: center;
-    background-color: #141414;
+    background-color: #000;
   }
 
 @keyframes pageSlideLeft {
@@ -24,16 +24,16 @@
 }
 
 .container.open {
-    animation: pageSlideLeft 0.3s forwards;
+    animation: pageSlideLeft 0.4s forwards;
 }
 
 .container.closed {
-    animation: pageSlideRight 0.3s forwards;
+    animation: pageSlideRight 0.4s forwards;
 }
 
 .body {
     height: 80%;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 1em 2em;
+    padding: 1em 1.2em;
 }

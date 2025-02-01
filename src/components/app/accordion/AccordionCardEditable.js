@@ -7,8 +7,7 @@ const AccordionCardEditable = ({
     editItemInput,
     setEditItemInput,
     editItemId,
-    setEditItemId,
-    isArrayEmpty
+    setEditItemId
 }) => {
 
     const handleOnClick = (e) => {
@@ -51,24 +50,20 @@ const AccordionCardEditable = ({
                     type="submit"
                     onClick={handleOnClick}
                 >
-                    <div className={styles.btns}>
-                        <Check
-                            className={styles.btnIcons}
-                            alt="Check icon"
-                        />
-                    </div>
+                    <Check
+                        className={styles.btnIcons}
+                        alt="Check icon"
+                    />
                 </button>
                 <button
                     className={`${styles.formBtns} ${styles.right}`}
                     type="button"
                     onClick={(e) => handleCancelClick(e)}
                 >
-                    <div className={styles.btns}>
-                        <Cancel
-                            className={styles.btnIcons}
-                            alt="Cancel icon"
-                        />
-                    </div>
+                    <Cancel
+                        className={styles.btnIcons}
+                        alt="Cancel icon"
+                    />
                 </button>
             </form>
         </div>

@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 1em;
+    gap: 1.5em;
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -16,14 +16,16 @@
     width: 100%;
     padding: 0 1em;
     border-radius: 50px;
-    background-color: #EEE;
-    color: #333;
+    background-color: #fefefc;
+    color: #000;
     font-size: 1.25rem;
 }
 
 .formInput:focus {
     border: 3px solid #20B2AA;
 }
+
+/* Buttons */
 
 .formBtns {
     padding: .1em 1em;
@@ -34,7 +36,6 @@
 }
 
 .formBtns:active {
-    color: #333;
     background-color: #146A6A;
     border-color: #146A6A;
 }
@@ -47,15 +48,15 @@
     grid-column: 2/3;
 }
 
-.btnIcons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/* Button Icons */
 
 .btnIcons {
     width: 1.7em;
     height: 1.7em;
-    color: #EEE;
+    color: #fefefc;
     width: 100%;
+}
+
+.btnIcons:active {
+    color: #1c1c1e;
 }

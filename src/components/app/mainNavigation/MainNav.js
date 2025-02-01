@@ -62,7 +62,7 @@ const MainNav = ({ setIsOpen }) => {
     };
 
     return (
-        <div>
+        <div className={styles.container}>
             <button className={styles.menuBtn} onClick={toggleMenu}>
                 {isMenuOpen
                     ? <CloseMenuIcon className={styles.closeMenuIcon} />
@@ -70,18 +70,15 @@ const MainNav = ({ setIsOpen }) => {
                 }
             </button>
             <nav className={`${styles.navMenu} ${isMenuOpen ? styles.open : styles.closed}`} ref={menuRef}>
-                <div className={styles.logoContainer}>
-                    <div className={styles.logoSection}>
-                        <div className={styles.logoText}>
-                            <Link to="/" onClick={() => toggleComponent("home")}>
-                                <h2>MyLife</h2>
-                                <h3>Organizer</h3>
-                            </Link>
-                        </div>
+                <div className={styles.logoSection}>
+                    <div className={styles.logoText}>
+                        <Link to="/" onClick={() => toggleComponent("home")}>
+                            <h2>MyLife</h2>
+                            <h3>Organizer</h3>
+                        </Link>
                     </div>
                 </div>
                 <ul className={`${styles.navMenuUl}`}>
-                    <hr />
                     <NavItemCard
                         location="/"
                         toggleComponent={toggleComponent}
@@ -202,7 +199,6 @@ const MainNav = ({ setIsOpen }) => {
                             />
                         title="Trash"
                     />
-                    <hr />
                 </ul>
             </nav>
         </div>

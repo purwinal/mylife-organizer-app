@@ -7,9 +7,9 @@
     right: 0;
     justify-content: center;
     align-items: center;
-    padding: 1.2em 1em;
+    padding: 1em 1em;
     box-shadow: 0px 10px 30px 5px #333;
-    margin: 1em;
+    margin: 1.2em;
     border-radius: 10px;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .header h1 {
-    color: #FFF;
+    color: #fefefc;
     font-weight: bold;
     margin: 0;
     overflow: hidden;

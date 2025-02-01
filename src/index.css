@@ -19,8 +19,41 @@ code {
 }
 
 /*
+
 COLORS:
-aqua green: #20B2AA
+
+TEXT:
+- Headings / Item Titles         [White]                #fefefc
+- Normal Text                    [Medium Grey]          #4f4e51
+- Links / Theme Colors           [Aqua Green]           #20B2AA
+- Active Links (Background)      [Dark Aqua Green]      #146A6A
+- Active Links (Color)           [Dark Grey]            #1c1c1e
+
+BACKGROUNDS & TABS:
+- Page Background                [Black]                #000
+- Item Tabs                      [Dark Grey]            #1c1c1e
+- Tab Arrows Icons               [Grey]                 #5a595e
+- Item Tabs Bottom Border        [Dark Grey]            #333
+- Accordion Content Background   [Dark Grey]            #333
+
+FORMS:
+- Input Fields                   [White]                #fefefc
+- Text Color                     [Black]                #000
+
+BUTTONS:
+- Disabled Button                [Grey]                 #808080
+- Button Background              [Aqua Green]           #20B2AA
+- Button Text                    [White]                #fefefc
+- Button Active Background       [Dark Aqua Green]      #146A6A
+- Button Active Text             [Dark Grey]            #1c1c1e
+
+TOGGLE SWITCHES:
+- Toggle On                      [Green]                #6ace66
+- Toggle Off                     [White]                #fff
+
+HR TAG:
+- <hr> Tag Color                 [Light Grey]           #808080
+
 */
 
 h1 {

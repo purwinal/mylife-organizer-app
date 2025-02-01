@@ -2,7 +2,7 @@
     padding: 1em 2em 2em;
     overflow: auto;
     line-height: 3.5rem;
-    background-color: #000;
+    background-color: #333;
     border-radius: 0;
 }
 
@@ -28,24 +28,25 @@
 
 .gridHeadings3Col {
     font-weight: bold;
-    color: #EEE;
+    color: #fefefc;
     border-bottom: none;
 }
 
 .gridItems3Col {
-    border-bottom: 1px solid #333;
-    color: #EEE;
+    border-bottom: 1px solid #1c1c1e;
+    color: #fefefc;
 }
 
 .deleteBtnIcon {
-    width: 1em;
-    height: 1em;
+    width: 1.3em;
+    height: 1.3em;
     color: #20B2AA;
+    margin-bottom: -.3em;
 }
 
 .dateRow {
     background-color: #20B2AA;
-    color: #333;
+    color: #1c1c1e;
     line-height: 2rem;
     border-radius: 10px;
 }
@@ -65,7 +66,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 2em 0 0 0;
-    border-top: 1px solid #EEE;
+    border-top: 1px solid #fefefc;
 }
 
 .formInput {
@@ -75,8 +76,8 @@
     width: 100%;
     padding: 0 1em;
     border-radius: 50px;
-    background-color: #EEE;
-    color: #333;
+    background-color: #fefefc;
+    color: #000;
     font-size: 1.25rem;
     line-height: 1.9rem;
     text-align: center;
@@ -97,14 +98,14 @@
 }
 
 .formBtns:active {
-    color: #333;
+    color: #1c1c1e;
     background-color: #146A6A;
     border-color: #146A6A;
 }
 
 .formBtns.disabled {
-    background-color: #ccc;
-    border: 1px solid #ccc;
+    background-color: #808080;
+    border: 1px solid #808080;
 }
 
 .btnIcons {
@@ -116,6 +117,6 @@
 .btnIcons {
     width: 1.7em;
     height: 1.7em;
-    color: #EEE;
+    color: #fefefc;
     width: 100%;
 }

@@ -20,28 +20,24 @@
 .item.lastItemClosed .title {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    border-bottom: none;
 }
 
 .title {
-    border-bottom: 2px solid #333;
-    background-color: #3c3c3c;
-    padding: 0;
-    width: 100%;
+    border-bottom: 1px solid #333;
+    background-color: #1c1c1e;
 }
 
 .content {
-    color: #EEE;
     max-height: 0;
     overflow: hidden;
-    transition: all 0.3s cubic-bezier(0, 1, 0, 1);
+    transition: max-height 0.4s ease;
 }
 
 .contentShow {
-    color: #EEE;
-    height: auto;
-    max-height: auto;
+    max-height: 475px;
     overflow: hidden;
-    transition: all 0.3s cubic-bezier(1, 0, 1, 0);
+    transition: max-height 0.4s ease;
 }
 
 .lastItemContent {

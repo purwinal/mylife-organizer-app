@@ -41,7 +41,7 @@ const AccordionCardReadOnly = ({
                         alt="Delete item icon"
                     />
                 </button>
-                <span>{selected === index ? <ChevronUp /> : <ChevronDown />}</span>
+                <span>{selected === index ? <ChevronUp className={styles.arrowIcon} /> : <ChevronDown className={styles.arrowIcon} />}</span>
             </div>
         </div>
     )

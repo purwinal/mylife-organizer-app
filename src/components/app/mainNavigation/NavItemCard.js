@@ -9,7 +9,7 @@ const NavItemCard = ({ location, toggleComponent, togglePage, icon, title  }) =>
                 {icon}
                 <div className={styles.navItemTitle}>
                     <div className={`${styles.navItemName} ${styles.hoverUnderline}`}>{title}</div>
-                    <ArrowIcon className={styles.navItemRight} />
+                    <ArrowIcon className={styles.navItemArrow} />
                 </div>
             </NavLink>
         </li>

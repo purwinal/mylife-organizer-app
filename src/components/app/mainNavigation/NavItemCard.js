@@ -6,10 +6,14 @@ const NavItemCard = ({ location, toggleComponent, togglePage, icon, title  }) =>
     return (
         <li className={styles.container}>
             <NavLink className={styles.navItem} to={location} onClick={() => toggleComponent(togglePage)}>
-                {icon}
+                <div>
+                    {icon}
+                </div>
                 <div className={styles.navItemTitle}>
                     <div className={`${styles.navItemName} ${styles.hoverUnderline}`}>{title}</div>
+                    <div>
                     <ArrowIcon className={styles.navItemArrow} />
+                    </div>
                 </div>
             </NavLink>
         </li>

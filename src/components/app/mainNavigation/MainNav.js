@@ -89,7 +89,6 @@ const MainNav = ({ setIsOpen }) => {
                             />
                         title="Overview"
                     />
-                    <hr />
                     <NavItemCard
                         location="/to-do-lists"
                         toggleComponent={toggleComponent}
@@ -100,7 +99,6 @@ const MainNav = ({ setIsOpen }) => {
                             />
                         title="To-Do Lists"
                     />
-                    <hr />
                     <NavItemCard
                         location="/notes"
                         toggleComponent={toggleComponent}
@@ -111,7 +109,6 @@ const MainNav = ({ setIsOpen }) => {
                             />
                         title="Notes"
                     />
-                    <hr />
                     <NavItemCard
                         location="/calendar"
                         toggleComponent={toggleComponent}
@@ -122,7 +119,6 @@ const MainNav = ({ setIsOpen }) => {
                             />
                         title="Calendar"
                     />
-                    <hr />
                     <NavItemCard
                         location="/finances"
                         toggleComponent={toggleComponent}
@@ -133,7 +129,6 @@ const MainNav = ({ setIsOpen }) => {
                             />
                         title="Finances"
                     />
-                    <hr />
                     <NavItemCard
                         location="/medications"
                         toggleComponent={toggleComponent}
@@ -144,7 +139,6 @@ const MainNav = ({ setIsOpen }) => {
                             />
                         title="Medication"
                     />
-                    <hr />
                     <NavItemCard
                         location="/workouts"
                         toggleComponent={toggleComponent}
@@ -155,7 +149,6 @@ const MainNav = ({ setIsOpen }) => {
                             />
                         title="Workouts"
                     />
-                    <hr />
                     <NavItemCard
                         location="/calories"
                         toggleComponent={toggleComponent}
@@ -166,7 +159,6 @@ const MainNav = ({ setIsOpen }) => {
                             />
                         title="Calories"
                     />
-                    <hr />
                     <NavItemCard
                         location="/journal"
                         toggleComponent={toggleComponent}
@@ -177,7 +169,6 @@ const MainNav = ({ setIsOpen }) => {
                             />
                         title="Journal"
                     />
-                    <hr />
                     <NavItemCard
                         location="/settings"
                         toggleComponent={toggleComponent}
@@ -188,7 +179,6 @@ const MainNav = ({ setIsOpen }) => {
                             />
                         title="Settings"
                     />
-                    <hr />
                     <NavItemCard
                         location="/trash"
                         toggleComponent={toggleComponent}

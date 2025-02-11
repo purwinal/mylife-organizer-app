@@ -162,7 +162,7 @@ const MedicineContent = ({
                             onChange={(e) => setInputType(e.target.value)}
                         >
                             <option className={styles.option} value="mg">mg</option>
-                            <option className={styles.option} value="Qty">Qty</option>
+                            <option className={styles.option} value="qty">Qty</option>
                         </select>
                         {inputType === 'mg' ? (
                             <>

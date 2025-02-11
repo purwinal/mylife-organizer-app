@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styles from './MedicineContent.module.css';
 import { ReactComponent as DeleteIcon } from '../../assets/delete-item-dash-circle.svg';
 import { ReactComponent as Check } from '../../assets/check.svg';
@@ -8,8 +8,14 @@ const MedicineContent = ({
     dispatch
 }) => {
     const [ dosage, setDosage ] = useState('');
+    const [ qty, setQty ] = useState('');
+    const [ inputType, setInputType ] = useState('mg');
+    const [ timeType, setTimeType ] = useState('AM');
+    const [ itemAdded, setItemAdded] = useState(false);
+    const [ timeInput, setTimeInput ] = useState('');
+    const lastItemRef = useRef(null);
 
-    const handleFormChange = (e) => {
+    const handleDosageChange = (e) => {
         let value = e.target.value.replace(/[^0-9]/g, "");
         if (value) {
             const formattedValue = value.slice(0, value.length - 1) + "." + value.slice(-1);
@@ -19,10 +25,46 @@ const MedicineContent = ({
         }
     };
 
+    const handleQtyChange = (e) => {
+        let value = e.target.value.replace(/[^0-9]/g, "");
+        setQty(value);
+    };
+
+    const handleTimeChange = (e) => {
+        let value = e.target.value.replace(/[^0-9]/g, "");
+        if (value) {
+            const formattedValue = value.slice(0, value.length -2) + ":" + value.slice(-2);
+            setTimeInput(formattedValue);
+        } else {
+            setTimeInput("");
+        }
+    };
+
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        dispatch({ type: 'ADD_DOSAGE', id: item.id, dosage });
-        setDosage('');
+        const today = new Date();
+        let hours = timeInput ? parseInt(timeInput.split(':')[0]) : today.getHours();
+        const minutes = timeInput ? parseInt(timeInput.split(':')[1]) : today.getMinutes();
+
+        if (timeType === 'PM' && hours < 12) {
+            hours += 12;
+        } else if (timeType === 'AM' && hours === 12) {
+            hours = 0;
+        }
+
+        const formattedTime = timeInput ? `${timeInput} ${timeType}` : today.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+        const timeInMinutes = hours * 60 + minutes;
+
+        if (inputType === 'mg') {
+            dispatch({ type: 'ADD_DOSAGE', id: item.id, dosage, formattedTime, timeInMinutes });
+            setDosage('');
+        } else if (inputType === 'qty') {
+            dispatch({ type: 'ADD_QTY', id: item.id, qty, formattedTime, timeInMinutes });
+            setQty('');
+        }
+        setItemAdded(true);
+        setTimeInput('');
+        setTimeType('AM');
     };
 
     const handleDeleteClick = (medicationId, dosageId) => {
@@ -43,6 +85,13 @@ const MedicineContent = ({
         });
     }
 
+    useEffect(() => {
+        if (itemAdded && lastItemRef.current) {
+            lastItemRef.current.scrollIntoView({ behavior: 'smooth' });
+            setItemAdded(false);
+        }
+    }, [item.dosage, itemAdded]);
+
     let lastDate = null;
 
     return (
@@ -53,13 +102,15 @@ const MedicineContent = ({
                 <h3>Delete</h3>
             </div>
             <div className={styles.gridItemsContainer}>
-                {item.dosage.map((dose) => {
-                    const currentDate = new Date(dose.time).toDateString();
-                    const showDateRow = currentDate !== lastDate;
-                    lastDate = currentDate;
+                {item.dosage
+                    .sort((a, b) => a.timeInMinutes - b.timeInMinutes)
+                    .map((dose, index) => {
+                        const currentDate = new Date(dose.time).toDateString();
+                        const showDateRow = currentDate !== lastDate;
+                        lastDate = currentDate;
 
                     return (
-                        <div key={dose.id}>
+                        <div key={dose.id} ref={index === item.dosage.length - 1 ? lastItemRef : null}>
                             {showDateRow && (
                                 <div className={styles.dateRow}>
                                     <p className={styles.dateRowText}>{formatDate(dose.time)}</p>
@@ -67,7 +118,7 @@ const MedicineContent = ({
                             )}
                             <div className={styles.gridItems3Col} key={dose.id}>
                                 <p>{dose.currentTime}</p>
-                                <p>{dose.amount}mg</p>
+                                <p>{dose.amount}</p>
                                 <p>
                                     <button className={styles.deleteBtn} onClick={() => handleDeleteClick(item.id, dose.id)}>
                                         <DeleteIcon
@@ -78,39 +129,114 @@ const MedicineContent = ({
                                 </p>
                             </div>
                         </div>
-                    );
+                    )
                 })}
             </div>
             <div className={styles.contentSection}>
                 <form className={styles.form} onSubmit={handleFormSubmit}>
-                    <input
-                        type="text"
-                        inputMode="numeric"
-                        name="dosage"
-                        className={styles.formInput}
-                        placeholder="mg"
-                        value={dosage}
-                        onChange={handleFormChange}
-                    />
-                    {dosage <= 0 || dosage === '' ? (
-                        <button type="button" className={`${styles.formBtns} ${styles.disabled}`}>
-                            <div className={styles.btns}>
-                                <Check
-                                    className={styles.btnIcons}
-                                    alt="Check icon"
+                    <div className={styles.inputContainer}>
+                        <select
+                            name="timeType"
+                            className={styles.formSelect}
+                            value={timeType}
+                            onChange={(e) => setTimeType(e.target.value)}
+                        >
+                            <option className={styles.option} value="AM">AM (Optional)</option>
+                            <option className={styles.option} value="PM">PM (Optional)</option>
+                        </select>
+                        <input
+                            type="text"
+                            inputMode="numeric"
+                            name="time"
+                            className={styles.formInput}
+                            placeholder="Optional"
+                            value={timeInput}
+                            onChange={handleTimeChange}
+                        />
+                    </div>
+                    <div className={styles.inputContainer}>
+                        <select
+                            name="inputType"
+                            className={styles.formSelect}
+                            value={inputType}
+                            onChange={(e) => setInputType(e.target.value)}
+                        >
+                            <option className={styles.option} value="mg">mg</option>
+                            <option className={styles.option} value="Qty">Qty</option>
+                        </select>
+                        {inputType === 'mg' ? (
+                            <>
+                                <input
+                                    type="text"
+                                    inputMode="numeric"
+                                    name="dosage"
+                                    className={styles.formInput}
+                                    placeholder="mg"
+                                    value={dosage}
+                                    onChange={handleDosageChange}
                                 />
-                            </div>
-                        </button>
-                    ) : (
-                        <button type="submit" className={styles.formBtns}>
-                            <div className={styles.btns}>
-                                <Check
-                                    className={styles.btnIcons}
-                                    alt="Check icon"
+                            </>
+                        ) : (
+                            <>
+                                <input
+                                    type="text"
+                                    inputMode="numeric"
+                                    name="qty"
+                                    className={styles.formInput}
+                                    placeholder="Qty"
+                                    value={qty}
+                                    onChange={handleQtyChange}
                                 />
-                            </div>
-                        </button>
-                    )}
+                            </>
+                        )}
+                    </div>
+                    <div className={styles.formBtnContainer}>
+                        {inputType === 'mg' ? (
+                            <>
+                                {dosage <= 0 || dosage === '' ? (
+                                    <button type="button" className={`${styles.formBtns} ${styles.disabled}`}>
+                                        <div className={styles.btns}>
+                                            <Check
+                                                className={styles.btnIcons}
+                                                alt="Check icon"
+                                            />
+                                        </div>
+                                    </button>
+                                ) : (
+                                    <button type="submit" className={styles.formBtns}>
+                                        <div className={styles.btns}>
+                                            <Check
+                                                className={styles.btnIcons}
+                                                alt="Check icon"
+                                            />
+                                        </div>
+                                    </button>
+                                )}
+                            </>
+                        ) : (
+                            <>
+                                {qty <= 0 || qty === '' ? (
+                                    <button type="button" className={`${styles.formBtns} ${styles.disabled}`}>
+                                        <div className={styles.btns}>
+                                            <Check
+                                                className={styles.btnIcons}
+                                                alt="Check icon"
+                                            />
+                                        </div>
+                                    </button>
+                                ) : (
+                                    <button type="submit" className={styles.formBtns}>
+                                        <div className={styles.btns}>
+                                            <Check
+                                                className={styles.btnIcons}
+                                                alt="Check icon"
+                                            />
+                                        </div>
+                                    </button>
+                                )}
+                            </>
+                        )}
+                    </div>
                 </form>
             </div>
         </div>

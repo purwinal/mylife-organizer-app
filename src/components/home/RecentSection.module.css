@@ -22,9 +22,19 @@ h2 {
 .item {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: .5rem;
     justify-content: center;
     align-items: center;
+    width: 80px;
+}
+
+.item h3 {
+    font-size: 1rem;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 80px;
 }
 
 .imgContainer {
@@ -34,8 +44,8 @@ h2 {
 }
 
 .img {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border: 1px solid #ccc;
     border-radius: 10px;
 }

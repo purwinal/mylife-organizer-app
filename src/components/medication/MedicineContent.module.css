@@ -1,13 +1,14 @@
 .container {
-    padding: 1em 2em 2em;
-    overflow: auto;
-    line-height: 3.5rem;
+    padding: 1.5em 2em 2em;
+    height: 500px;
+    overflow-y: auto;
+    line-height: 3.3rem;
     background-color: #333;
     border-radius: 0;
 }
 
 .gridItemsContainer {
-    max-height: 300px;
+    max-height: 280px;
     overflow-y: auto;
 }
 
@@ -41,7 +42,7 @@
     width: 1.3em;
     height: 1.3em;
     color: #20B2AA;
-    margin-bottom: -.4em;
+    margin-bottom: -.35em;
 }
 
 .dateRow {
@@ -49,6 +50,7 @@
     color: #1c1c1e;
     line-height: 2rem;
     border-radius: 10px;
+    margin: 0 .5em;
 }
 
 .dateRowText {
@@ -58,15 +60,34 @@
     padding: 0 1em;
 }
 
+/* Form */
 .form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 2em;
-    align-items: center;
+    grid-template-rows: 1fr 1fr;
+    gap: 1em;
+    align-items: start;
     justify-content: space-between;
-    padding: 2em 0 0 0;
+    padding: 1.5em 0 1.5em 0;
     border-top: 1px solid #fefefc;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+}
+
+.formTimeLabel {
+    color: #fefefc;
+}
+
+.formSelect {
+    border: 3px solid transparent;
+    outline: none;
+    width: 100%;
+    background-color: #1c1c1e;
+    color: #fefefc;
+    text-align: center;
+    border-radius: 50px;
+    margin-bottom: .5em;
 }
 
 .formInput {
@@ -83,12 +104,17 @@
     text-align: center;
 }
 
-.formInput:focus {
+.formInput:focus,
+.formSelect:focus {
     border: 3px solid #20B2AA;
 }
 
+.formBtnContainer {
+    grid-column: span 2;
+}
+
 .formBtns {
-    grid-column: 2/3;
+    width: 100%;
     padding: .1em 1em;
     font-size: 1.125rem;
     line-height: 1.7rem;

@@ -1,6 +1,12 @@
 export const initialState = [];
 
 const medicationsReducer = (medications, action) => {
+    const today = new Date();
+    const formattedTime = today.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+    const formattedYear = today.getFullYear();
+    const formattedMonth = today.getMonth() + 1; // Months are zero-based
+    const formattedDate = today.getDate();
+
     switch (action.type) {
         case 'ADD_TITLE':
             return [
@@ -24,12 +30,6 @@ const medicationsReducer = (medications, action) => {
         case 'CANCEL_DELETE_TITLE':
             return medications; // No state change needed for canceling delete
         case 'ADD_DOSAGE':
-            const today = new Date();
-            const formattedTime = today.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
-            const formattedYear = today.getFullYear();
-            const formattedMonth = today.getMonth() + 1; // Months are zero-based
-            const formattedDate = today.getDate();
-
             return medications.map((medication) =>
                 medication.id === action.id
                     ? {
@@ -39,14 +39,37 @@ const medicationsReducer = (medications, action) => {
                               {
                                   id: new Date().getTime(),
                                   category: 'Medication Dosage',
-                                  amount: action.dosage,
+                                  amount: action.dosage + 'mg',
                                   time: new Date().toISOString(),
-                                  currentTime: formattedTime,
+                                  currentTime: action.formattedTime,
                                   date: formattedDate,
                                   month: formattedMonth,
                                   year: formattedYear,
+                                  timeInMinutes: action.timeInMinutes,
                               },
-                          ],
+                          ].sort((a, b) => a.timeInMinutes - b.timeInMinutes),
+                      }
+                    : medication
+            );
+        case 'ADD_QTY':
+            return medications.map((medication) =>
+                medication.id === action.id
+                    ? {
+                          ...medication,
+                          dosage: [
+                              ...medication.dosage,
+                              {
+                                  id: new Date().getTime(),
+                                  category: 'Medication Dosage',
+                                  amount: action.qty + 'ct',
+                                  time: new Date().toISOString(),
+                                  currentTime: action.formattedTime,
+                                  date: formattedDate,
+                                  month: formattedMonth,
+                                  year: formattedYear,
+                                  timeInMinutes: action.timeInMinutes,
+                              },
+                          ].sort((a, b) => a.timeInMinutes - b.timeInMinutes),
                       }
                     : medication
             );

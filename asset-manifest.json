@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mylife-organizer-app/static/css/main.0c764be0.css",
-    "main.js": "/mylife-organizer-app/static/js/main.d2ca421b.js",
+    "main.js": "/mylife-organizer-app/static/js/main.8533a880.js",
     "static/js/453.f24e5791.chunk.js": "/mylife-organizer-app/static/js/453.f24e5791.chunk.js",
     "static/media/settings.svg": "/mylife-organizer-app/static/media/settings.e40e5c953fcb6a2f9c6393ee546e5840.svg",
     "index.html": "/mylife-organizer-app/index.html",
@@ -28,11 +28,11 @@
     "static/media/check.svg": "/mylife-organizer-app/static/media/check.17ed16633b9ca577fae9510da59b4876.svg",
     "static/media/chevron-up.svg": "/mylife-organizer-app/static/media/chevron-up.67524a9bd44c683cbea7f0843b33368b.svg",
     "main.0c764be0.css.map": "/mylife-organizer-app/static/css/main.0c764be0.css.map",
-    "main.d2ca421b.js.map": "/mylife-organizer-app/static/js/main.d2ca421b.js.map",
+    "main.8533a880.js.map": "/mylife-organizer-app/static/js/main.8533a880.js.map",
     "453.f24e5791.chunk.js.map": "/mylife-organizer-app/static/js/453.f24e5791.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0c764be0.css",
-    "static/js/main.d2ca421b.js"
+    "static/js/main.8533a880.js"
   ]
 }

@@ -38,6 +38,10 @@
     color: #fefefc;
 }
 
+.noBottomBorder {
+    border-bottom: none;
+}
+
 .deleteBtnIcon {
     width: 1.3em;
     height: 1.3em;
@@ -50,7 +54,7 @@
     color: #1c1c1e;
     line-height: 2rem;
     border-radius: 10px;
-    margin: 0 .5em;
+    margin: 0;
 }
 
 .dateRowText {

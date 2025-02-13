@@ -35,7 +35,6 @@ const MedicationComponent = ({ medications, dispatch, isOpen }) => {
                 />
             </div>
             <PageMenu
-                isAddingItem={isAddingItem}
                 setIsAddingItem={setIsAddingItem}
             />
         </section>

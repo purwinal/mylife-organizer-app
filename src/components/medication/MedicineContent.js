@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 import styles from './MedicineContent.module.css';
 import { ReactComponent as DeleteIcon } from '../../assets/delete-item-dash-circle.svg';
 import { ReactComponent as Check } from '../../assets/check.svg';
@@ -90,7 +90,11 @@ const MedicineContent = ({
             lastItemRef.current.scrollIntoView({ behavior: 'smooth' });
             setItemAdded(false);
         }
-    }, [item.dosage, itemAdded]);
+    }, [itemAdded]);
+
+    const sortedDosages = useMemo(() => {
+        return item.dosage.sort((a, b) => a.timeInMinutes - b.timeInMinutes);
+    }, [item.dosage]);
 
     let lastDate = null;
 
@@ -102,12 +106,10 @@ const MedicineContent = ({
                 <h3>Delete</h3>
             </div>
             <div className={styles.gridItemsContainer}>
-                {item.dosage
-                    .sort((a, b) => a.timeInMinutes - b.timeInMinutes)
-                    .map((dose, index) => {
-                        const currentDate = new Date(dose.time).toDateString();
-                        const showDateRow = currentDate !== lastDate;
-                        lastDate = currentDate;
+                {sortedDosages.map((dose, index) => {
+                    const currentDate = new Date(dose.time).toDateString();
+                    const showDateRow = currentDate !== lastDate;
+                    lastDate = currentDate;
 
                     return (
                         <div key={dose.id} ref={index === item.dosage.length - 1 ? lastItemRef : null}>
@@ -116,7 +118,7 @@ const MedicineContent = ({
                                     <p className={styles.dateRowText}>{formatDate(dose.time)}</p>
                                 </div>
                             )}
-                            <div className={styles.gridItems3Col} key={dose.id}>
+                            <div className={`${styles.gridItems3Col} ${index < sortedDosages.length - 1 && new Date(sortedDosages[index + 1].time).toDateString() !== currentDate ? styles.noBottomBorder : ''}`} key={dose.id}>
                                 <p>{dose.currentTime}</p>
                                 <p>{dose.amount}</p>
                                 <p>

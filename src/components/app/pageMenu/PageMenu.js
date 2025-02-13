@@ -4,7 +4,7 @@ import { ReactComponent as AddIcon } from '../../../assets/add-item.svg';
 import { ReactComponent as UpArrow } from '../../../assets/chevron-wide-up.svg';
 import { ReactComponent as DownArrow } from '../../../assets/chevron-wide-down.svg';
 
-const PageMenu = ({ isAddingItem, setIsAddingItem }) => {
+const PageMenu = ({ setIsAddingItem }) => {
 
     const [ isPageMenuOpen, setIsPageMenuOpen ] = useState(false);
 

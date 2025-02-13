@@ -32,8 +32,80 @@
 }
 
 .body {
-    height: 80%;
+    height: 580px;
     overflow-y: auto;
     overflow-x: hidden;
     padding: 1em 1.2em;
+}
+
+.title {
+    border: 3px solid transparent;
+    outline: none;
+    width: 100%;
+    border-radius: 50px;
+    color: #fefefc;
+    font-weight: bold;
+}
+
+.items {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    max-width: 100%;
+    gap: 1em;
+    color: #fefefc;
+    background-color:  #1c1c1e;
+    border-radius: 10px;
+    padding: 1em;
+    margin: .75em 0;
+}
+
+.itemText {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 1em;
+    width: 89%;
+}
+
+.checkbox {
+    appearance: none;
+    width: 1.5em;
+    height: 1.5em;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox:checked {
+    background-color: #20B2AA;
+    border-color: #20B2AA;
+}
+
+.checkbox:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 6px;
+    height: 12px;
+    border: solid #fefefc;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.text {
+    width: 80%;
+}
+
+.lineThrough {
+    text-decoration: line-through;
+    color: #333;
+}
+
+.btnIcons {
+    width: 1.5em;
+    height: 1.5em;
+    color: #20B2AA;
 }

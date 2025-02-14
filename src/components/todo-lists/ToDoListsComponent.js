@@ -82,17 +82,11 @@ const ToDoListsComponent = ({ toDoLists, setToDoLists, isOpen }) => {
                         </li>
                     ))}
                 </ul>
-                {isAddingItem ? (
-                    <ToDoCardAdd
-                        dispatch={dispatch}
-                        toDoText={toDoText}
-                        setToDoText={setToDoText}
-                        isAddingItem={isAddingItem}
-                        setIsAddingItem={setIsAddingItem}
-                    />
-                ) : (
-                    null
-                )}
+                <ToDoCardAdd
+                    dispatch={dispatch}
+                    toDoText={toDoText}
+                    setToDoText={setToDoText}
+                />
                 <PageMenu
                     setIsAddingItem={setIsAddingItem}
                 />

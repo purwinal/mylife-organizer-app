@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import styles from './AccordionCardAdd.module.css';
 import { ReactComponent as UpArrow } from '../../../assets/chevron-wide-up.svg';
 import { ReactComponent as Check } from '../../../assets/check.svg';
@@ -15,6 +15,7 @@ const AccordionCardAdd = ({
 }) => {
 
     const clearFormInput = useRef("");
+    const newItemRef = useRef(null);
 
     const handleFormChange = (e) => {
         setAddItemInput({
@@ -28,6 +29,12 @@ const AccordionCardAdd = ({
         dispatch({ type: 'ADD_TITLE', title: addItemInput.title });
         setIsAddingItem(false);
     };
+
+    useEffect(() => {
+        if (newItemRef.current) {
+            newItemRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [isAddingItem]);
 
     if (!isAddingItem && isArrayEmpty) {
         return (
@@ -53,7 +60,7 @@ const AccordionCardAdd = ({
     }
 
     return (
-        <div className={`${styles.container} ${isArrayEmpty ? styles.fullBorderRadius : styles.bottomBorderRadius}`}>
+        <div ref={newItemRef} className={`${styles.container} ${isArrayEmpty ? styles.fullBorderRadius : styles.bottomBorderRadius}`}>
             <form className={styles.form} onSubmit={handleFormSubmit}>
                 <input
                     className={`${styles.formInput}`}

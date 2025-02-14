@@ -1,5 +1,5 @@
 import { useState, useReducer, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import styles from './App.module.css';
 import headerStyles from './components/app/Header.module.css';
 import HomeComponent from './components/home/HomeComponent.js';
@@ -17,9 +17,10 @@ import MainNav from './components/app/mainNavigation/MainNav.js';
 import medicationsReducer from './reducers/medicationsReducer.js';
 import { initialState } from './reducers/medicationsReducer.js';
 import Header from './components/app/Header.js';
-import RecentSection from './components/home/RecentSection.js';
 import PageMenu from './components/app/pageMenu/PageMenu.js';
 import { ReactComponent as Logo } from './assets/home.svg';
+import { ReactComponent as MedicationIcon } from './assets/medication.svg';
+import { ReactComponent as TodoListIcon } from './assets/todo-list.svg';
 
 function App() {
 
@@ -128,6 +129,22 @@ function App() {
 		trash: false
 	});
 
+	const toggleComponent = (component) => {
+        setIsOpen({
+            home: false,
+            toDoLists: false,
+            notes: false,
+            calendar: false,
+            finances: false,
+            medications: false,
+            workouts: false,
+            calories: false,
+            journal: false,
+            trash: false,
+            [component]: true
+        });
+    };
+
   	return (
     	<div className={styles.container}>
 			<MainNav
@@ -138,50 +155,20 @@ function App() {
                 title="Overview"
             />
 			<div className={styles.body}>
-                <RecentSection
-                    heading="To-Do Lists"
-                    array={toDoLists}
-                />
-                <hr />
-                <RecentSection
-                    heading="Notes"
-                    array={notes}
-                />
-                <hr />
-                <RecentSection
-                    heading="Upcoming Events"
-                    array={events}
-                />
-                <hr />
-                <RecentSection
-                    heading="Finances"
-                    array={expenses}
-                />
-                <hr />
-                <RecentSection
-                    heading="Medications"
-                    array={medications}
-                />
-                <hr />
-                <RecentSection
-                    heading="Workouts"
-                    array={workouts}
-                />
-                <hr />
-                <RecentSection
-                    heading="Calories"
-                    array={calories}
-                />
-                <hr />
-                <RecentSection
-                    heading="Journals"
-                    array={journals}
-                />
-                <hr />
-                <RecentSection
-                    heading="Recently Deleted"
-                    array={trash}
-                />
+				<div className={styles.frequentApps}>
+					<Link to="/medications" onClick={() => toggleComponent("medications")}>
+						<div className={styles.appContainer}>
+							<MedicationIcon className={`${styles.appIcons} ${styles.medicationIcon}`} alt="Medication icon" />
+							<h2>Medications</h2>
+						</div>
+					</Link>
+					<Link to="/to-do-lists" onClick={() => toggleComponent("toDoLists")}>
+						<div className={styles.appContainer}>
+							<TodoListIcon className={`${styles.appIcons} ${styles.toDoListIcon}`} alt="To-do list icon" />
+							<h2>To-Do Lists</h2>
+						</div>
+					</Link>
+				</div>
             </div>
             <PageMenu />
 			<main className={styles.main}>
@@ -190,6 +177,7 @@ function App() {
 						path="/"
 						element={<HomeComponent
 							isOpen={isOpen}
+							setIsOpen={setIsOpen}
 							toDoLists={toDoLists}
 							notes={notes}
 							events={events}

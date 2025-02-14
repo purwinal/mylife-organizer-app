@@ -4,7 +4,7 @@
   "homepage": "https://purwinal.github.io/mylife-organizer-app",
   "private": true,
   "dependencies": {
-    "@chakra-ui/react": "^3.5.1",
+    "@chakra-ui/react": "^3.8.0",
     "@emotion/react": "^11.14.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

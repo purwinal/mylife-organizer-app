@@ -1,12 +1,10 @@
 import styles from './ToDoCardAdd.module.css';
 import { ReactComponent as Check } from '../../assets/check.svg';
-import { ReactComponent as Cancel } from '../../assets/x.svg';
 
 const ToDoCardAdd = ({
     dispatch,
     toDoText,
-    setToDoText,
-    setIsAddingItem
+    setToDoText
 }) => {
 
     const handleFormSubmit = (e) => {
@@ -14,7 +12,6 @@ const ToDoCardAdd = ({
         if (toDoText.trim() !== '') {
             dispatch({ type: 'ADD_TASK', toDoText });
             setToDoText('');
-            setIsAddingItem(false);
         }
     }
 
@@ -24,27 +21,17 @@ const ToDoCardAdd = ({
                 <input
                     className={styles.formInput}
                     type="text"
-                    placeholder="Add a new task..."
+                    placeholder="Add a new item..."
                     value={toDoText}
                     onChange ={e => setToDoText(e.target.value)}
                 />
                 <button
-                    className={`${styles.formBtns} ${styles.left}`}
+                    className={`${styles.formBtns}`}
                     type="submit"
                 >
                     <Check
                         className={styles.btnIcons}
                         alt="Check icon"
-                    />
-                </button>
-                <button
-                    className={`${styles.formBtns} ${styles.right}`}
-                    type="button"
-                    onClick={() => setIsAddingItem(false)}
-                >
-                    <Cancel
-                        className={styles.btnIcons}
-                        alt="Cancel icon"
                     />
                 </button>
             </form>

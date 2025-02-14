@@ -36,6 +36,7 @@
 .gridItems3Col {
     border-bottom: 1px solid #1c1c1e;
     color: #fefefc;
+    line-height: 2.7rem;
 }
 
 .noBottomBorder {
@@ -54,7 +55,7 @@
     color: #1c1c1e;
     line-height: 2rem;
     border-radius: 10px;
-    margin: 0;
+    margin: .5em 0;
 }
 
 .dateRowText {

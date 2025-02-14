@@ -7,4 +7,46 @@
     right: auto;
     height: 100dvh;
     width: 100vw;
+    padding: 1.2em;
   }
+
+  .body {
+    height: 80%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1em 0;
+}
+
+.frequentApps {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1em;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #20B2AA;
+  border-radius: 10px;
+  padding: 2em;
+}
+
+.appContainer:active {
+  background-color: #146A6A;
+  color: #1c1c1e;
+}
+
+.appIcons {
+  width: 3em;
+  height: 3em;
+  color: #fcfcfe;
+  margin-bottom: 1em;
+}
+
+.appIcons:active {
+  color: #1c1c1e;
+}

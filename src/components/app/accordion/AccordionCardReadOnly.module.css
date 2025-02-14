@@ -17,6 +17,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     width: 100%;
+    padding: .3em 0;
 }
 
 .btns {

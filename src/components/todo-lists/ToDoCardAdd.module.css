@@ -1,24 +1,21 @@
 .container {
+    position: fixed;
+    bottom: 5em;
+    width: calc(100vw - 2.4em);
     height: auto;
     margin: 0;
     padding: 0;
-    background-color: #1c1c1e;
-    border-radius: 10px;
 }
 
 .form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 1.5em;
+    display: flex;
+    gap: 1em;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 1.5em 2em;
 }
 
 .formInput {
-    grid-column: span 2;
     border: 3px solid transparent;
     outline: none;
     width: 100%;
@@ -39,19 +36,12 @@
     border: 1px solid #20B2AA;
     background-color: #20B2AA;
     border-radius: 50px;
+    width: 4em;
 }
 
 .formBtns:active {
     background-color: #146A6A;
     border-color: #146A6A;
-}
-
-.formBtns.left {
-    grid-column: 1/2;
-}
-
-.formBtns.right {
-    grid-column: 2/3;
 }
 
 /* Button Icons */

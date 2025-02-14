@@ -6,7 +6,7 @@
     background-color: transparent;
     color: #fefefc;
     padding: 0;
-    margin: 1.6em 1.4em;
+    margin: .45em .2em;
     border: none;
 }
 
@@ -31,7 +31,7 @@
     background-color: #20B2AA;
     border-radius: 10px;
     width: 100%;
-    padding: 1em 1em .9em 4.5em;
+    padding: 1em 1em .9em 4.94em;
     margin: 0;
     line-height: 1.7rem;
 }

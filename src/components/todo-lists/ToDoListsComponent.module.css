@@ -33,19 +33,22 @@
 }
 
 .body {
-    height: 580px;
-    overflow-y: auto;
-    overflow-x: hidden;
+    height: 500px;
     padding: 1em 0;
 }
 
 .title {
-
     outline: none;
     width: 100%;
-
     color: #fefefc;
     font-weight: bold;
+    margin-bottom: .5em;
+}
+
+.list {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 450px;
 }
 
 .items {

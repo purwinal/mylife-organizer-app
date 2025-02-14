@@ -1,10 +1,12 @@
 .container {
     position: fixed;
-    bottom: 4.5em;
+    bottom: 3.5em;
     width: calc(100vw - 2.4em);
     height: auto;
     margin: 0;
-    padding: 0;
+    padding: 1em .5em;
+    background-color: #1c1c1e;
+    border-radius: 10px;
 }
 
 .form {

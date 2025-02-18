@@ -93,7 +93,7 @@ const MedicineContent = ({
     }, [itemAdded]);
 
     const sortedDosages = useMemo(() => {
-        return item.dosage.sort((a, b) => b.timeInMinutes - a.timeInMinutes);
+        return item.dosage.sort((a, b) => new Date(a.time) - new Date(b.time));
     }, [item.dosage]);
 
     let lastDate = null;

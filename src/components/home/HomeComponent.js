@@ -6,6 +6,7 @@ import PageMenu from '../app/pageMenu/PageMenu.js';
 import { ReactComponent as Logo } from '../../assets/home.svg';
 import { ReactComponent as MedicationIcon } from '../../assets/medication.svg';
 import { ReactComponent as TodoListIcon } from '../../assets/todo-list.svg';
+import FoodPicker from '../app/FoodPicker.js';
 
 const HomeComponent = ({
     isOpen,
@@ -49,6 +50,7 @@ const HomeComponent = ({
 						</div>
 					</Link>
 				</div>
+                <FoodPicker />
             </div>
             <PageMenu />
         </section>

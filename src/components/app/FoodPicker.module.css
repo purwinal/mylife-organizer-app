@@ -1,0 +1,86 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 5px solid #20B2AA;
+    border-radius: 10px;
+    background-color: #1c1c1e;
+    padding: 2em;
+    margin-top: 1.5em;
+}
+
+.foodPickerIcon {
+    width: 3em;
+    height: 3em;
+    color: #fcfcfe;
+    margin-bottom: 1em;
+}
+
+.sectionText {
+    margin: 1em 0;
+}
+
+.randomCategory {
+    width: 100%;
+    text-align: left;
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+    padding-top: 1.5em;
+    margin-bottom: 1em;
+}
+
+.chosenCategory {
+    width: 100%;
+    text-align: left;
+}
+
+.chosenContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1em;
+}
+
+.optionsHeadings {
+    font-weight: bold;
+}
+
+.selectInput {
+    background-color: #fefefc;
+    color: #1c1c1e;
+    border: 3px solid transparent;
+    border-radius: 50px;
+    outline: none;
+    width: 60%;
+    padding: .2em 1em;
+    font-size: 1.125rem;
+}
+
+.btns {
+    width: 100%;
+    padding: .2em 1em;
+    font-size: 1.125rem;
+    line-height: 1.7rem;
+    border: 1px solid #20B2AA;
+    background-color: #20B2AA;
+    border-radius: 50px;
+    margin: 1.5em 0;
+}
+
+.btns.last {
+    margin-bottom: 0;
+}
+
+.btns:active {
+    color: #1c1c1e;
+    background-color: #146A6A;
+    border-color: #146A6A;
+}
+
+.btns.disabled {
+    background-color: #808080;
+    border: 1px solid #808080;
+}

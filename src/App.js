@@ -21,6 +21,7 @@ import PageMenu from './components/app/pageMenu/PageMenu.js';
 import { ReactComponent as Logo } from './assets/home.svg';
 import { ReactComponent as MedicationIcon } from './assets/medication.svg';
 import { ReactComponent as TodoListIcon } from './assets/todo-list.svg';
+import FoodPicker from './components/app/FoodPicker.js';
 
 function App() {
 
@@ -169,6 +170,7 @@ function App() {
 						</div>
 					</Link>
 				</div>
+				<FoodPicker />
             </div>
             <PageMenu />
 			<main className={styles.main}>

@@ -35,8 +35,8 @@
 }
 
 .contentShow {
-    max-height: 475px;
-    overflow: hidden;
+    max-height: 460px; /* was 475px */
+    /*overflow: hidden;*/
     transition: max-height 0.4s ease;
 }
 
